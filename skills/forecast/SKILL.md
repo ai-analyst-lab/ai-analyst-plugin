@@ -1,3 +1,7 @@
+---
+name: forecast
+description: Generate time-series forecasts for key metrics with naive baselines, seasonality detection, and exponential smoothing
+---
 # Skill: Forecast
 
 ## Purpose

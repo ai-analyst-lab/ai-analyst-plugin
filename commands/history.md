@@ -1,3 +1,7 @@
+---
+description: Browse and search past analyses from the analysis archive
+argument-hint: "[analysis-id]"
+---
 # Skill: History
 
 ## Purpose

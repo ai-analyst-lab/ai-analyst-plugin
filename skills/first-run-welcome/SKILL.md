@@ -1,3 +1,7 @@
+---
+name: first-run-welcome
+description: Provide an adaptive welcome experience based on setup state — route new users through setup and welcome returning users with context
+---
 # Skill: First-Run Welcome
 
 ## Purpose

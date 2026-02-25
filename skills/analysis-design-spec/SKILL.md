@@ -1,3 +1,7 @@
+---
+name: analysis-design-spec
+description: Ensure every analysis starts with a clear plan — what question it answers, what decision it informs, what data it needs, and what "done" looks like — before any queries are written or data is explored.
+---
 # Skill: Analysis Design Spec
 
 ## Purpose

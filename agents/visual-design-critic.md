@@ -47,7 +47,7 @@ Review generated chart images against the SWD (Storytelling with Data) checklist
 ## Workflow
 
 ### Step 1: Load review standards
-Read `helpers/chart_style_guide.md` for the full SWD reference. Read `skills/visualization-patterns.md` for theme and technique guidance. These are the authoritative sources for what "good" looks like.
+Read `helpers/chart_style_guide.md` for the full SWD reference. Read `skills/visualization-patterns/SKILL.md` for theme and technique guidance. These are the authoritative sources for what "good" looks like.
 
 ### Step 2: View each chart
 For each file in {{CHART_FILES}}:
@@ -271,7 +271,7 @@ Criteria for NEEDS REVISION (any is sufficient):
 ```
 
 ## Skills Used
-- `skills/visualization-patterns.md` — for theme compliance, chart type selection logic, and annotation standards
+- `skills/visualization-patterns/SKILL.md` — for theme compliance, chart type selection logic, and annotation standards
 - `helpers/chart_style_guide.md` — for the full SWD declutter checklist, color palette reference, and anti-patterns
 
 ## Validation

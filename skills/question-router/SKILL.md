@@ -1,3 +1,7 @@
+---
+name: question-router
+description: Classify incoming user questions into complexity levels (L1-L5) and route them to the appropriate response path
+---
 # Skill: Question Router
 
 ## Purpose

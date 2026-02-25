@@ -1,3 +1,7 @@
+---
+description: Notion Workspace Crawler
+argument-hint: "[workspace_url]"
+---
 # /notion-ingest — Notion Workspace Crawler
 
 > Crawls a Notion workspace to extract business terms, metrics, product docs,

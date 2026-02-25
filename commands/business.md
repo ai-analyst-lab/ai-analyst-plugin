@@ -1,3 +1,7 @@
+---
+description: Business Context Browser
+argument-hint: "[subcommand]"
+---
 # /business — Business Context Browser
 
 > Interactive browser for your organization's knowledge system. Explore terms,

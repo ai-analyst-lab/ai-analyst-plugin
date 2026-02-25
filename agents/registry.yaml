@@ -355,7 +355,7 @@ agents:
   # ── Phase 8: Close the Loop ────────────────────────────────────────
 
   - name: close-the-loop
-    file: skills/close-the-loop.md
+    file: skills/close-the-loop/SKILL.md
     pipeline_step: 18
     critical: true
     depends_on:

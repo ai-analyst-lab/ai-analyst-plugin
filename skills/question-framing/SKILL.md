@@ -1,3 +1,7 @@
+---
+name: question-framing
+description: Structure analytical questions using the Question Ladder framework so every analysis starts with a clear decision context, measurable success criteria, and testable hypotheses.
+---
 # Skill: Question Framing
 
 ## Purpose

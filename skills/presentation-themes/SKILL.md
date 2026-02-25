@@ -1,3 +1,7 @@
+---
+name: presentation-themes
+description: Generate slide decks that look professional, tell a coherent analytical story, and follow consistent theme standards matching the visualization patterns.
+---
 # Skill: Presentation Themes
 
 ## Purpose

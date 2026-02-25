@@ -1,3 +1,7 @@
+---
+name: visualization-patterns
+description: Ensure every chart Claude Code produces follows high-quality design standards with named themes, consistent styling, and clear data communication.
+---
 # Skill: Visualization Patterns
 
 ## Purpose

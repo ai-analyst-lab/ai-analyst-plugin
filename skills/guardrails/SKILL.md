@@ -1,3 +1,7 @@
+---
+name: guardrails
+description: Ensure that every success metric is paired with at least one guardrail metric, and that positive findings are checked for trade-offs before being presented as wins.
+---
 # Skill: Guardrails Awareness
 
 ## Purpose

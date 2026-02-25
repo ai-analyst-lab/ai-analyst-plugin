@@ -1,3 +1,7 @@
+---
+name: tracking-gaps
+description: Assess whether the data needed for an analysis actually exists, identify what'''s missing, and produce prioritized instrumentation requests for engineering when gaps are found.
+---
 # Skill: Tracking Gap Identification
 
 ## Purpose

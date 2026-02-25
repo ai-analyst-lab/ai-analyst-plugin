@@ -1,3 +1,7 @@
+---
+name: data-quality-check
+description: Validate data completeness, consistency, and coverage before any analysis begins, flagging issues with severity ratings so the analyst knows what blocks analysis vs. what to note as a caveat.
+---
 # Skill: Data Quality Check
 
 ## Purpose

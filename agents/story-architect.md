@@ -376,8 +376,8 @@ Combine Phase 1 (beats) and Phase 2 (visual mapping) into the final storyboard d
 ```
 
 ## Skills Used
-- `skills/visualization-patterns.md` — for chart type selection, SWD color principles, and visual technique guidance
-- `skills/question-framing.md` — to ensure the storyboard answers the original business question
+- `skills/visualization-patterns/SKILL.md` — for chart type selection, SWD color principles, and visual technique guidance
+- `skills/question-framing/SKILL.md` — to ensure the storyboard answers the original business question
 
 ## Validation
 1. **Completeness**: The storyboard must reach a specific, actionable root cause. If it stops at a surface observation, it is incomplete.

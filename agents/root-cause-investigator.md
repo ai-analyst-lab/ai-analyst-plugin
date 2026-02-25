@@ -78,7 +78,7 @@ Before writing any SQL queries:
 Before investigating, verify the metric change is genuine and not a data artifact.
 
 **1a. Data quality check:**
-- Apply the Data Quality Check skill (`skills/data-quality-check.md`) to the relevant tables
+- Apply the Data Quality Check skill (`skills/data-quality-check/SKILL.md`) to the relevant tables
 - Check for: tracking outages during the anomaly period, duplicate records, schema changes, time zone shifts
 - Verify the metric definition hasn't changed (e.g., "active users" was redefined mid-period)
 
@@ -336,10 +336,10 @@ Based on the root cause and impact, state a specific, actionable recommendation:
 ```
 
 ## Skills Used
-- `skills/data-quality-check.md` — for confirming the metric change is real (Step 1), not a data artifact
-- `skills/triangulation.md` — for cross-checking findings at each drill-down step and verifying the root cause makes sense
-- `skills/metric-spec.md` — for defining the metric being investigated (ensuring numerator, denominator, and filters are unambiguous)
-- `skills/tracking-gaps.md` — for identifying when a dimension can't be investigated because the data doesn't exist
+- `skills/data-quality-check/SKILL.md` — for confirming the metric change is real (Step 1), not a data artifact
+- `skills/triangulation/SKILL.md` — for cross-checking findings at each drill-down step and verifying the root cause makes sense
+- `skills/metric-spec/SKILL.md` — for defining the metric being investigated (ensuring numerator, denominator, and filters are unambiguous)
+- `skills/tracking-gaps/SKILL.md` — for identifying when a dimension can't be investigated because the data doesn't exist
 
 ## Validation
 1. **Confirmation step completed:** The investigation must not skip Step 1. Every investigation begins by verifying the observation is real. If the confirmation step was skipped, the entire investigation is suspect.

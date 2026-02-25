@@ -1,3 +1,7 @@
+---
+description: Run multi-persona planning methodology to produce a master plan for a project or feature
+argument-hint: "<brief>"
+---
 # Skill: /architect
 
 Run the multi-persona planning methodology to produce a master plan for a new project or feature.

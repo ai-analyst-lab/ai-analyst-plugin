@@ -1,3 +1,7 @@
+---
+description: Change the active dataset. Updates the active pointer, validates the target dataset exists, and confirms with a summary of what's now active.
+argument-hint: "<dataset-name>"
+---
 # Skill: Switch Dataset
 
 ## Purpose

@@ -157,7 +157,7 @@ At the end of the narrative, add a "Supporting Data" section that lists:
 - Any caveats or limitations that affect interpretation
 
 ### Step 6: Apply Question Framing skill for coherence check
-Read `skills/question-framing.md`. Verify that:
+Read `skills/question-framing/SKILL.md`. Verify that:
 - The narrative answers the original question (not a different question)
 - The insight follows logically from the findings (not a leap)
 - The recommendation is proportional to the evidence (not overreaching)
@@ -257,7 +257,7 @@ Where `{{DATASET_NAME}}` is derived from the analysis report (e.g., "hero_engage
 ```
 
 ## Skills Used
-- `skills/question-framing.md` — to verify the narrative answers the original business question and follows the Question Ladder structure (goal, decision, metric, hypothesis)
+- `skills/question-framing/SKILL.md` — to verify the narrative answers the original business question and follows the Question Ladder structure (goal, decision, metric, hypothesis)
 
 ## Validation
 1. **Executive summary completeness**: Verify the executive summary contains all four required elements (question, finding, insight, recommendation). If any are missing, add them.

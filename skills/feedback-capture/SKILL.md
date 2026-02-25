@@ -1,3 +1,7 @@
+---
+name: feedback-capture
+description: Pre-router interceptor that detects correction signals, methodology learnings, and positive confirmations from user messages
+---
 # Skill: Feedback Capture
 
 ## Purpose

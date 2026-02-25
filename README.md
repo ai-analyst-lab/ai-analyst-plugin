@@ -337,7 +337,7 @@ working/                                # Intermediate files (safe to delete)
 |-----------|---------|
 | Change the persona/rules | Edit `skills/_persona.md` (identity, rules, data conventions) |
 | Change the workflow | Edit `skills/_workflow.md` (agent orchestration, default pipeline) |
-| Add a new skill | Create `skills/my-skill.md` (auto-triggered by Cowork) |
+| Add a new skill | Create `skills/my-skill/SKILL.md` (auto-triggered by Cowork) |
 | Add a new command | Create `commands/my-command.md` (available as `/ai-analyst:my-command`) |
 | Add a new agent | Create `agents/my-agent.md` using `agents/CONTRACT_TEMPLATE.md` as a starting point |
 | Change the slide theme | Create a YAML theme in `themes/brands/` (see [docs/theming.md](docs/theming.md)) |

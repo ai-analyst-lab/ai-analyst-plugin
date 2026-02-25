@@ -1,3 +1,6 @@
+---
+description: Resume an interrupted analysis pipeline by reading `working/pipeline_state.json`, determining which agents completed, and continuing from the next READY agents using the DAG walker.
+---
 # Skill: Resume Pipeline
 
 ## Purpose

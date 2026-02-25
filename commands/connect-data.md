@@ -1,3 +1,7 @@
+---
+description: Guided wizard to connect a new dataset — select type, configure credentials, validate, and profile
+argument-hint: "[type=postgres|bigquery|snowflake|duckdb]"
+---
 # Skill: Connect Data
 
 ## Purpose

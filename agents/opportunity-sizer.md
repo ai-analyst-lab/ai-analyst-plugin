@@ -256,8 +256,8 @@ Impact = [N] × [X%] × $[Y] = $[Z] / year
 ```
 
 ## Skills Used
-- `skills/metric-spec.md` — for defining the metrics used in the impact model (ensuring numerator/denominator clarity)
-- `skills/triangulation.md` — for sanity-checking the computed impact against benchmarks and order-of-magnitude plausibility
+- `skills/metric-spec/SKILL.md` — for defining the metrics used in the impact model (ensuring numerator/denominator clarity)
+- `skills/triangulation/SKILL.md` — for sanity-checking the computed impact against benchmarks and order-of-magnitude plausibility
 
 ## Validation
 1. **Impact model is explicit:** The formula must be written out with named variables and actual values. No "the impact is approximately $X" without showing the math.

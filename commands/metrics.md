@@ -1,3 +1,7 @@
+---
+description: Browse, search, and display metric definitions from the active dataset
+argument-hint: "[metric-id]"
+---
 # Skill: Metrics
 
 ## Purpose

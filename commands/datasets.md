@@ -1,3 +1,6 @@
+---
+description: List all connected datasets with their status, table counts, and last analysis date.
+---
 # Skill: Datasets
 
 ## Purpose

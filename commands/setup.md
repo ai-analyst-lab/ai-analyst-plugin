@@ -1,3 +1,7 @@
+---
+description: Run a 4-phase conversational interview to populate the knowledge system from user context
+argument-hint: "[status|reset]"
+---
 # Skill: /setup
 
 Run a 4-phase conversational interview that populates the knowledge system

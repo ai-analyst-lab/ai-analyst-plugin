@@ -1,3 +1,7 @@
+---
+name: patterns
+description: Browse and search recurring patterns discovered across analyses that represent behaviors repeating across datasets or time periods
+---
 # Skill: Patterns
 
 ## Purpose

@@ -1,3 +1,7 @@
+---
+name: close-the-loop
+description: Ensure every analysis that includes a recommendation ends with a clear follow-up plan — who decides, what metric tracks success, when to check back, and what to do if the expected outcome doesn'''t materialize.
+---
 # Skill: Close-the-Loop
 
 ## Purpose

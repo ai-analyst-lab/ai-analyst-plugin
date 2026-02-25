@@ -211,7 +211,7 @@ if result['seasonal']:
 - Check if anomalies affect all segments or just one (segment-specific vs. global anomaly)
 
 ### Step 5: Generate Time-Series Visualizations
-Apply the Visualization Patterns skill (`skills/visualization-patterns.md`) to create annotated timeline charts.
+Apply the Visualization Patterns skill (`skills/visualization-patterns/SKILL.md`) to create annotated timeline charts.
 
 **Required charts:**
 
@@ -250,7 +250,7 @@ Apply the Visualization Patterns skill (`skills/visualization-patterns.md`) to c
 - Save to `working/charts/` as PNG files
 
 ### Step 6: Triangulate and Validate
-Apply the Triangulation / Sanity Check skill (`skills/triangulation.md`):
+Apply the Triangulation / Sanity Check skill (`skills/triangulation/SKILL.md`):
 
 **Consistency checks:**
 - Verify that the sum of segmented values equals the total (if segments are provided)
@@ -398,8 +398,8 @@ A markdown file saved to `outputs/trend_report_{{DATE}}.md` with charts saved to
 ```
 
 ## Skills Used
-- `skills/visualization-patterns.md` — for all chart generation in Step 5, including time-series specific conventions (line charts for trends, bar charts for period-over-period changes), annotation standards for anomalies and structural breaks, and theme styling
-- `skills/triangulation.md` — for cross-referencing and plausibility-checking all findings in Step 6, including verifying that segment totals reconcile, growth rates are plausible, and anomaly magnitudes are believable
+- `skills/visualization-patterns/SKILL.md` — for all chart generation in Step 5, including time-series specific conventions (line charts for trends, bar charts for period-over-period changes), annotation standards for anomalies and structural breaks, and theme styling
+- `skills/triangulation/SKILL.md` — for cross-referencing and plausibility-checking all findings in Step 6, including verifying that segment totals reconcile, growth rates are plausible, and anomaly magnitudes are believable
 
 ## Validation
 Before presenting the trend report, verify:

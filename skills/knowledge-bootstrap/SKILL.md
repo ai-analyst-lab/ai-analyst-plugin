@@ -1,3 +1,7 @@
+---
+name: knowledge-bootstrap
+description: Initialize all 7 knowledge subsystems for a new session — setup state, dataset, user profile, integrations, org context, corrections, and learnings
+---
 # Skill: Knowledge Bootstrap
 
 ## Purpose

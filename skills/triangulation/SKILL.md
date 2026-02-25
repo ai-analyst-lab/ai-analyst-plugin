@@ -1,3 +1,7 @@
+---
+name: triangulation
+description: Cross-reference analytical findings against multiple data sources, external benchmarks, and common sense to catch errors before they become bad decisions.
+---
 # Skill: Triangulation / Sanity Check
 
 ## Purpose

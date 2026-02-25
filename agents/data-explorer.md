@@ -93,7 +93,7 @@ For each table or file discovered, compute:
 **Execute this profiling using Python (pandas) or SQL depending on the data source type.** Write the actual code, run it, and capture the results. Do not estimate or guess — compute the real values.
 
 ### Step 3: Assess Data Quality
-Apply the Data Quality Check skill (`skills/data-quality-check.md`). For each table/file, check:
+Apply the Data Quality Check skill (`skills/data-quality-check/SKILL.md`). For each table/file, check:
 
 **Completeness:**
 - Flag columns with >5% null rate as WARNING, >20% as BLOCKER
@@ -117,7 +117,7 @@ Rate each finding with a severity:
 - **INFO**: Worth noting but does not affect analysis (e.g., 0.1% duplicates)
 
 ### Step 4: Identify Tracking Gaps
-Apply the Tracking Gap Identification skill (`skills/tracking-gaps.md`):
+Apply the Tracking Gap Identification skill (`skills/tracking-gaps/SKILL.md`):
 
 **If {{ANALYSIS_GOALS}} is provided:**
 - Extract the data requirements from the analysis goals (questions, hypotheses, or plain text)
@@ -253,8 +253,8 @@ A markdown file saved to `outputs/data_inventory_{{DATE}}.md` with this structur
 ```
 
 ## Skills Used
-- `skills/data-quality-check.md` — for the completeness, consistency, and distribution checks in Step 3, including severity rating criteria (BLOCKER/WARNING/INFO)
-- `skills/tracking-gaps.md` — for the gap analysis in Step 4, including the AVAILABLE/PARTIAL/MISSING/DERIVABLE classification and workaround suggestions
+- `skills/data-quality-check/SKILL.md` — for the completeness, consistency, and distribution checks in Step 3, including severity rating criteria (BLOCKER/WARNING/INFO)
+- `skills/tracking-gaps/SKILL.md` — for the gap analysis in Step 4, including the AVAILABLE/PARTIAL/MISSING/DERIVABLE classification and workaround suggestions
 
 ## Validation
 Before presenting the data inventory report, verify:

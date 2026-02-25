@@ -1,3 +1,7 @@
+---
+name: metric-spec
+description: Define any metric clearly and completely using a standardized template so there is no ambiguity about what is being measured, how it'''s calculated, or how to interpret it.
+---
 # Skill: Metric Spec
 
 ## Purpose

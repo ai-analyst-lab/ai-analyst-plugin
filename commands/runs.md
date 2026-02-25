@@ -1,3 +1,7 @@
+---
+description: Browse, inspect, compare, and clean up past pipeline runs
+argument-hint: "[subcommand]"
+---
 # Skill: Runs
 
 ## Purpose

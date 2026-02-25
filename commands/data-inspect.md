@@ -1,3 +1,7 @@
+---
+description: Show the active dataset's schema — tables, columns, row counts, and relationships. Optionally drill into a specific table.
+argument-hint: "[table]"
+---
 # Skill: Data Inspect
 
 ## Purpose

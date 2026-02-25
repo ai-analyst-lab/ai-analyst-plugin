@@ -1,3 +1,7 @@
+---
+name: archaeology
+description: Retrieve proven SQL patterns, table cheatsheets, and join patterns from the query archaeology store so agents reuse validated work instead of writing SQL from scratch
+---
 # Skill: Query Archaeology Retrieval
 
 ## Purpose

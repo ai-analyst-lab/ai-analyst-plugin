@@ -1,3 +1,6 @@
+---
+description: Record analyst mistakes and their fixes so future analyses learn from past errors
+---
 # Skill: Log Correction
 
 ## Purpose

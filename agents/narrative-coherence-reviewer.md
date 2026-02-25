@@ -248,8 +248,8 @@ Criteria for NEEDS RESEQUENCING (all must be true):
 ```
 
 ## Skills Used
-- `skills/visualization-patterns.md` — for Context-Tension-Resolution sequencing principles
-- `skills/question-framing.md` — to verify the storyboard answers the original business question
+- `skills/visualization-patterns/SKILL.md` — for Context-Tension-Resolution sequencing principles
+- `skills/question-framing/SKILL.md` — to verify the storyboard answers the original business question
 
 ## Validation
 1. **All beats reviewed**: Every beat in {{STORYBOARD}} must appear in the phase structure table and progressive focus assessment. No beats skipped.

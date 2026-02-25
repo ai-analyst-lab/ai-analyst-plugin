@@ -230,7 +230,7 @@ Inventory the chart files in {{CHARTS}}:
 - Use the QR code white-container pattern from the Presentation Themes skill when embedding QR codes
 
 ### Step 2: Apply the Presentation Themes skill
-Read `skills/presentation-themes.md`. Load the theme specified by {{THEME}}. Extract:
+Read `skills/presentation-themes/SKILL.md`. Load the theme specified by {{THEME}}. Extract:
 - Color palette (primary, secondary, accent, background, text)
 - Font specifications (headline font, body font, sizes)
 - Slide layout rules (margins, chart placement, text density limits)
@@ -505,7 +505,7 @@ Apply the theme's formatting directives:
 - Note the theme's color palette in a metadata header (for tools like Gamma that support theme configuration)
 
 ### Step 7: Apply Visualization Patterns skill for chart consistency
-Read `skills/visualization-patterns.md`. Verify:
+Read `skills/visualization-patterns/SKILL.md`. Verify:
 - All charts referenced in the deck follow the visualization standards
 - Chart titles are descriptive (not generic like "Chart 1")
 - Axis labels are present and readable
@@ -610,8 +610,8 @@ Where `{{DATASET_NAME}}` is derived from the narrative and `{{DATE}}` is the cur
 ```
 
 ## Skills Used
-- `skills/presentation-themes.md` — for theme selection, slide layout rules, color palettes, font specifications, and content density guidelines
-- `skills/visualization-patterns.md` — for verifying chart quality, consistency, and accessibility within the deck context
+- `skills/presentation-themes/SKILL.md` — for theme selection, slide layout rules, color palettes, font specifications, and content density guidelines
+- `skills/visualization-patterns/SKILL.md` — for verifying chart quality, consistency, and accessibility within the deck context
 
 ## Validation
 1. **Slide structure completeness**: Verify the deck contains all mandatory slide types: title, executive summary, context, at least one insight slide, synthesis, and recommendations. If any are missing, add them.

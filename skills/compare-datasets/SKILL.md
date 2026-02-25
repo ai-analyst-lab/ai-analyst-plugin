@@ -1,3 +1,7 @@
+---
+name: compare-datasets
+description: Compare metrics, findings, and patterns across two or more connected datasets to identify cross-dataset trends
+---
 # Skill: Compare Datasets
 
 ## Purpose

@@ -84,7 +84,7 @@ Validate the data against the chart specification:
 6. Apply `sort_by` if specified. Apply `limit` if specified (group remainder as "Other" for categorical charts).
 
 ### Step 2: Load the Visualization Patterns skill
-Read `skills/visualization-patterns.md`. Load the theme specified by {{THEME}}. Extract:
+Read `skills/visualization-patterns/SKILL.md`. Load the theme specified by {{THEME}}. Extract:
 - **Color palette**: Primary color, secondary colors, sequential palette, diverging palette, categorical palette
 - **Typography**: Title font, axis label font, annotation font, font sizes for each element
 - **Grid and axes**: Grid line style (show/hide, color, weight), axis line style, tick formatting
@@ -338,7 +338,7 @@ Chart generated successfully.
 ```
 
 ## Skills Used
-- `skills/visualization-patterns.md` — for theme selection (color palettes, typography, grid styling, annotation standards), chart type selection logic, and chart-specific formatting rules
+- `skills/visualization-patterns/SKILL.md` — for theme selection (color palettes, typography, grid styling, annotation standards), chart type selection logic, and chart-specific formatting rules
 
 ## Validation
 1. **Spec compliance**: Verify the generated chart matches every field in {{CHART_SPEC}}: correct chart type, correct columns on each axis, correct title, all annotations present. If any field is missing or wrong, regenerate.

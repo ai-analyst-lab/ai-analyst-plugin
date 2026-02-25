@@ -1,3 +1,7 @@
+---
+name: stakeholder-communication
+description: Adapt analytical findings to the audience — same insight, different framing, detail level, and format depending on who will read it. Ensures that executives get the bottom line, PMs get the implications, engineers get the specifics, and data teams get the methodology.
+---
 # Skill: Stakeholder Communication Matrix
 
 ## Purpose

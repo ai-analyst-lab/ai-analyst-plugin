@@ -1,3 +1,7 @@
+---
+name: archive-analysis
+description: Save a completed analysis to the knowledge system's analysis archive for future recall
+---
 # Skill: Archive Analysis
 
 ## Purpose

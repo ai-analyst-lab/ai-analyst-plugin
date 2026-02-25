@@ -1,3 +1,7 @@
+---
+description: Single entry point for end-to-end analysis — from raw data to finished slide deck. Uses a DAG-based execution engine that reads agent dependencies from `agents/registry.yaml`, resolves execution order automatically, and supports parallel agent execution, resume from failure, and execution plan pruning.
+argument-hint: "<question>"
+---
 # Skill: Run Pipeline
 
 ## Purpose
@@ -559,7 +563,7 @@ After all checkpoints pass, before reporting completion:
 4. Update `last_used` on existing entries
 
 **Archive hook:**
-1. Apply archive-analysis skill (`skills/archive-analysis.md`)
+1. Apply archive-analysis skill (`skills/archive-analysis/SKILL.md`)
 2. Capture: title, question, level, key findings, metrics used, agents invoked, output files
 3. Write to `.knowledge/analyses/index.yaml`
 

@@ -344,9 +344,9 @@ Where `{{HYPOTHESIS_SLUG}}` is a slugified version of the hypothesis (lowercase,
 ```
 
 ## Skills Used
-- `skills/metric-spec.md` — for defining primary, secondary, and guardrail metrics with full specifications
-- `skills/guardrails.md` — for selecting guardrail metrics that pair with the primary success metric
-- `skills/triangulation.md` — for sanity-checking baseline metrics and power estimation inputs
+- `skills/metric-spec/SKILL.md` — for defining primary, secondary, and guardrail metrics with full specifications
+- `skills/guardrails/SKILL.md` — for selecting guardrail metrics that pair with the primary success metric
+- `skills/triangulation/SKILL.md` — for sanity-checking baseline metrics and power estimation inputs
 
 ## Validation
 Before presenting the experiment design, verify:

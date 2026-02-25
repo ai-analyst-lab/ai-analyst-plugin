@@ -1,3 +1,6 @@
+---
+description: Developer Context Setup
+---
 # /setup-dev-context — Developer Context Setup
 
 > Standalone skill for teams integrating AI Analyst into development workflows.

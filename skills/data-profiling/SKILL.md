@@ -1,3 +1,7 @@
+---
+name: data-profiling
+description: Deep-profile the active dataset to understand schema structure, value distributions, temporal patterns, correlations, completeness gaps, and anomalies. Produces a comprehensive profile report that serves as the foundation for analysis planning and data quality assessment.
+---
 # Skill: Data Profiling
 
 ## Purpose

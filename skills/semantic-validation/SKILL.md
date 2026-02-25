@@ -1,3 +1,7 @@
+---
+name: semantic-validation
+description: Orchestrate the full 4-layer validation stack plus confidence scoring to produce a comprehensive data quality assessment
+---
 # Skill: Semantic Validation
 
 ## Purpose

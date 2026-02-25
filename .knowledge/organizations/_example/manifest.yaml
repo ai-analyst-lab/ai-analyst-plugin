@@ -1,0 +1,8 @@
+# Organization manifest — populated by /setup interview (Phase 3)
+# Copy this template to .knowledge/organizations/{your-org}/ and fill in.
+organization: "Example Corp"
+is_example: true
+created_at: null  # Set by /setup
+industry: "e-commerce"
+description: "Example organization template — replace with your company details"
+schema_version: 1

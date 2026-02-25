@@ -1,0 +1,32 @@
+# Metric Definition Schema — template for dataset metric YAML files
+# Each dataset can have metrics in .knowledge/datasets/{name}/metrics/
+schema_version: 1
+
+# Required fields:
+#   name: string — metric identifier (snake_case)
+#   display_name: string — human-readable name
+#   definition: string — precise calculation definition
+#   sql_template: string — SQL expression or query fragment
+#   grain: string — what each row represents
+
+# Optional fields:
+#   owner: string — team or person responsible
+#   target: number — target value
+#   guardrails: list[string] — related metrics to check for trade-offs
+#   segments: list[string] — common segmentation dimensions
+#   caveats: list[string] — known data quality issues or gotchas
+#   added_at: datetime
+#   last_validated: datetime
+#   status: active | deprecated | draft
+
+# Example:
+# name: conversion_rate
+# display_name: "Conversion Rate"
+# definition: "Users who completed purchase / Users who viewed product page"
+# sql_template: "COUNT(DISTINCT CASE WHEN purchased THEN user_id END) * 1.0 / COUNT(DISTINCT user_id)"
+# grain: "user-session"
+# owner: "Growth Team"
+# target: 0.035
+# guardrails: ["aov", "cart_abandonment_rate"]
+# segments: ["device_type", "traffic_source", "user_cohort"]
+# caveats: ["Excludes internal test accounts", "Bot traffic filtered by UA"]

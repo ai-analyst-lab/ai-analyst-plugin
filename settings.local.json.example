@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(marp:*)",
+      "WebFetch(domain:raw.githubusercontent.com)"
+    ]
+  }
+}

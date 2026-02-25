@@ -1,0 +1,20 @@
+# Analysis Archive Entry Schema
+# Each completed analysis gets an entry in index.yaml following this structure
+schema_version: 1
+
+# Required fields:
+#   id: string — unique analysis ID (e.g., "AN-001")
+#   title: string — descriptive title
+#   date: date — when the analysis was completed
+#   dataset: string — which dataset was analyzed
+#   question: string — the business question addressed
+#   status: completed | in_progress | abandoned
+
+# Optional fields:
+#   findings: list[string] — key findings (1-3 sentences each)
+#   confidence: string — A-F grade from validation
+#   artifacts: list[string] — paths to output files
+#   tags: list[string] — categorization tags
+#   follow_up: list[string] — questions raised for future investigation
+#   stakeholders: list[string] — who received the results
+#   decision_made: string — what decision was informed

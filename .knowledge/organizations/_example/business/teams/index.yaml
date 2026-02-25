@@ -1,0 +1,7 @@
+# Team structure — who needs what kind of analysis
+teams: []
+# Example entry:
+#   - name: "Growth"
+#     focus: "User acquisition and activation"
+#     key_metrics: ["dau", "activation_rate", "cac"]
+#     stakeholders: ["VP Product", "Head of Growth"]

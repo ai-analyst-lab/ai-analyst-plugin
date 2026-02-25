@@ -1,0 +1,112 @@
+# Base theme definition for AI Analyst
+# Brand themes inherit from and override these defaults.
+# See docs/theming.md for customization guide.
+
+theme:
+  name: "analytics"
+  display_name: "Analytics (Default)"
+  version: "1.0"
+  description: "Clean, professional analytics theme based on Storytelling with Data methodology."
+
+colors:
+  # Primary palette (SWD-inspired)
+  primary: "#4878CF"        # Blue — key data, call-to-action
+  secondary: "#6ACC65"      # Green — positive, growth
+  accent: "#D65F5F"         # Red — alerts, negative, emphasis
+  neutral: "#B0B0B0"        # Gray — supporting, context
+  background: "#F7F6F2"     # Warm off-white (matches analytics_chart_style.mplstyle)
+  text: "#333333"           # Dark gray — body text
+  text_light: "#666666"     # Medium gray — captions, annotations
+  # Categorical palette (8 colors, colorblind-safe — no red-green adjacent)
+  categorical:
+    - "#4878CF"   # blue
+    - "#6ACC65"   # green
+    - "#B47CC7"   # purple
+    - "#D65F5F"   # red
+    - "#C4AD66"   # gold
+    - "#77BEDB"   # light blue
+    - "#D68E5C"   # orange
+    - "#8C8C8C"   # gray
+  # Sequential palette (for heatmaps, density)
+  sequential:
+    low: "#E8F4FD"          # Lightest blue
+    mid: "#4878CF"          # Mid blue
+    high: "#1A3A6C"         # Darkest blue
+  # Diverging palette (for positive/negative)
+  diverging:
+    negative: "#D65F5F"     # Red — decline, loss
+    neutral: "#F7F6F2"      # Background — midpoint
+    positive: "#6ACC65"     # Green — growth, improvement
+  # Highlight colors (for SWD highlight_bar/highlight_line)
+  highlight:
+    focus: "#4878CF"        # Draw attention to key data
+    comparison: "#B0B0B0"   # De-emphasize supporting data
+    alert: "#D65F5F"        # Flag problems or outliers
+
+typography:
+  font_family: "Helvetica Neue, Helvetica, Arial, sans-serif"
+  heading_font: "Helvetica Neue, Helvetica, Arial, sans-serif"
+  monospace_font: "SF Mono, Menlo, Consolas, monospace"
+  sizes:                    # Font sizes in points
+    title: 18               # Chart and slide titles
+    subtitle: 14            # Supporting context line
+    body: 11                # Default body text
+    caption: 9              # Source citations, footnotes
+    annotation: 9           # Data callouts on charts
+    axis_label: 10          # Axis names
+    tick_label: 9           # Axis tick values
+  weights:
+    title: "bold"           # Titles always bold
+    subtitle: "normal"      # Subtitles regular weight
+    body: "normal"          # Body text regular weight
+    emphasis: "bold"        # Inline emphasis
+
+charts:
+  figure:
+    figsize: [10, 6]        # Width x height in inches
+    dpi: 150                # Resolution for sharp rendering
+    facecolor: "#F7F6F2"    # Match background color
+  axes:
+    facecolor: "#F7F6F2"    # Plot area background
+    grid: false             # No grid by default (SWD: declutter)
+    spines:
+      top: false            # Remove top spine
+      right: false          # Remove right spine
+      bottom: true          # Keep bottom spine
+      left: true            # Keep left spine
+    spine_color: "#CCCCCC"  # Light gray spines
+  bar:
+    default_color: "#B0B0B0"    # Gray — context bars
+    highlight_color: "#4878CF"  # Blue — the story bar
+    edge_width: 0               # No bar edges (declutter)
+  line:
+    default_color: "#B0B0B0"    # Gray — context lines
+    highlight_color: "#4878CF"  # Blue — the story line
+    width: 2.0                  # Standard line weight
+    highlight_width: 2.5        # Slightly heavier for emphasis
+  annotations:
+    font_size: 9            # Matches caption size
+    color: "#333333"        # Dark gray for readability
+    arrow_color: "#666666"  # Medium gray arrows
+
+presentations:
+  theme: "default"          # Base Marp theme to extend
+  paginate: true            # Show slide numbers
+  width: "16:9"             # Widescreen aspect ratio
+  slide_title_size: "32px"  # Large, scannable titles
+  slide_body_size: "20px"   # Comfortable reading size
+  slide_caption_size: "14px"  # Small for source lines
+  slide_background: "#FFFFFF"   # Clean white slides
+  slide_text: "#333333"         # Dark gray text
+  slide_accent: "#4878CF"       # Blue accent elements
+  # Dark mode variant (for analytics-dark theme)
+  dark:
+    slide_background: "#1E1E2E" # Deep dark background
+    slide_text: "#CDD6F4"       # Soft light text
+    slide_accent: "#89B4FA"     # Lighter blue for dark bg
+
+export:
+  chart_format: "png"       # PNG for lossless charts
+  chart_dpi: 150            # Match figure.dpi
+  chart_bbox: "tight"       # Crop whitespace
+  chart_transparent: false  # Opaque background

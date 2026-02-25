@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Join Pattern",
+  "description": "A validated join pattern between tables",
+  "type": "object",
+  "required": ["id", "tables", "join_sql"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^JP-[0-9]+$" },
+    "tables": { "type": "array", "items": { "type": "string" }, "minItems": 2 },
+    "join_sql": { "type": "string" },
+    "cardinality": { "type": "string", "enum": ["1:1", "1:N", "N:M"] },
+    "notes": { "type": "string" },
+    "validated": { "type": "boolean" },
+    "dataset": { "type": "string" },
+    "created_at": { "type": "string", "format": "date" }
+  }
+}

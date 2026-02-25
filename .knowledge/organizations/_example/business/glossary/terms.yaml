@@ -1,0 +1,9 @@
+# Business glossary — domain-specific terms and definitions
+# Add terms during /setup Phase 3 or as they come up in analysis
+terms: []
+# Example entry:
+#   - term: "activation"
+#     definition: "User completes onboarding and performs first key action"
+#     aliases: ["activated", "onboarded"]
+#     added_by: "setup"
+#     added_at: null

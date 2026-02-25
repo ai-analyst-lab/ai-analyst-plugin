@@ -1,0 +1,8 @@
+# Product catalog — what the company builds/sells
+products: []
+# Example entry:
+#   - name: "Mobile App"
+#     type: "product"
+#     description: "iOS and Android consumer app"
+#     key_metrics: ["dau", "retention_d7", "conversion_rate"]
+#     added_at: null

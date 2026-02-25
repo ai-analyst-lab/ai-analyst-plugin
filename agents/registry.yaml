@@ -1,0 +1,405 @@
+# registry.yaml — Machine-readable agent index
+# Auto-generated from CONTRACT blocks. Source of truth for OR-3 DAG walker.
+# Do NOT edit by hand — regenerate from agent CONTRACT blocks.
+#
+# Validation rules (enforced at pre-flight):
+#   1. Every agent.file must exist on disk
+#   2. Every name in depends_on must reference an agent in this file
+#   3. No cycles in the dependency graph (topological sort must succeed)
+#   4. Every pipeline_step agent must be reachable from at least one root (no orphans)
+#   5. Standalone agents (pipeline_step: null) are excluded from pipeline DAG
+#   6. critical defaults to true if omitted. Non-critical agents (critical: false)
+#      use warn_on_failure degradation — pipeline continues on failure with a warning.
+#   7. depends_on_any (optional): OR-dependency list. At least one named agent
+#      must complete before this agent runs. Contrast with depends_on (AND — all
+#      must complete). If both are present, all AND deps + at least one OR dep
+#      must be satisfied.
+
+version: 1
+agents:
+  # ── Phase 1: Framing ──────────────────────────────────────────────
+
+  - name: question-framing
+    file: agents/question-framing.md
+    pipeline_step: 1
+    critical: true
+    depends_on: []
+    inputs:
+      - BUSINESS_CONTEXT
+      - PRODUCT_DESCRIPTION
+      - AVAILABLE_DATA
+    outputs:
+      - outputs/question_brief_{{DATE}}.md
+    knowledge_context: []
+
+  # ── Phase 2: Hypotheses ───────────────────────────────────────────
+  # NOTE: hypothesis has no downstream DAG edges — its output is injected
+  # as runtime context (HYPOTHESIS_DOC) into descriptive-analytics et al.
+  # This is intentional: hypothesis is advisory, not blocking for analysis.
+
+  - name: hypothesis
+    file: agents/hypothesis.md
+    pipeline_step: 3
+    critical: true
+    depends_on:
+      - question-framing
+    inputs:
+      - QUESTION_BRIEF
+      - DATA_INVENTORY
+    outputs:
+      - outputs/hypothesis_doc_{{DATE}}.md
+    knowledge_context: []
+
+  # ── Phase 3: Data Discovery & Verification ────────────────────────
+
+  - name: data-explorer
+    file: agents/data-explorer.md
+    pipeline_step: 4
+    critical: true
+    depends_on: []
+    inputs:
+      - DATA_SOURCE
+      - ANALYSIS_GOALS
+    outputs:
+      - outputs/data_inventory_{{DATE}}.md
+      - working/data_inventory_raw.md
+    knowledge_context:
+      - .knowledge/datasets/{active}/schema.md
+      - .knowledge/datasets/{active}/quirks.md
+
+  - name: source-tieout
+    file: agents/source-tieout.md
+    pipeline_step: 4.5
+    critical: true
+    depends_on:
+      - data-explorer
+    inputs:
+      - DATA_SOURCE
+      - DUCKDB_PATH
+      - DATASET_NAME
+      - TABLE_MAPPING
+    outputs:
+      - working/tieout_{{DATASET_NAME}}_{{DATE}}.md
+      - working/tieout_mapping.md
+    knowledge_context:
+      - .knowledge/datasets/{active}/schema.md
+      - .knowledge/datasets/{active}/quirks.md
+
+  # ── Phase 4: Analysis ─────────────────────────────────────────────
+
+  - name: descriptive-analytics
+    file: agents/descriptive-analytics.md
+    pipeline_step: 5
+    critical: true
+    depends_on:
+      - source-tieout
+    inputs:
+      - DATASET
+      - QUESTION_BRIEF
+      - HYPOTHESIS_DOC
+      - DATA_INVENTORY
+      - FOCUS_AREA
+    outputs:
+      - outputs/analysis_report_{{DATE}}.md
+      - outputs/charts/*.png
+      - working/data_readiness_check.md
+    knowledge_context:
+      - .knowledge/datasets/{active}/schema.md
+      - .knowledge/datasets/{active}/quirks.md
+
+  - name: overtime-trend
+    file: agents/overtime-trend.md
+    pipeline_step: 5
+    critical: true
+    depends_on:
+      - source-tieout
+    inputs:
+      - DATASET
+      - TIME_COLUMN
+      - METRIC_COLUMNS
+      - GRANULARITY
+      - SEGMENTS
+      - ANALYSIS_CONTEXT
+    outputs:
+      - outputs/trend_report_{{DATE}}.md
+      - outputs/charts/*.png
+      - working/timeseries_prepared.csv
+    knowledge_context:
+      - .knowledge/datasets/{active}/schema.md
+      - .knowledge/datasets/{active}/quirks.md
+
+  - name: cohort-analysis
+    file: agents/cohort-analysis.md
+    pipeline_step: 5
+    critical: true
+    depends_on:
+      - source-tieout
+    inputs:
+      - COHORT_DIMENSION
+      - RETENTION_EVENT
+      - PERIODS
+      - DATASET
+      - DATA_INVENTORY
+    outputs:
+      - working/cohort_analysis_{{DATASET}}.md
+      - working/charts/retention_heatmap.png
+      - working/charts/retention_curves.png
+      - working/charts/ltv_curves.png
+    knowledge_context:
+      - .knowledge/datasets/{active}/schema.md
+      - .knowledge/datasets/{active}/quirks.md
+
+  # ── Phase 5: Investigation ────────────────────────────────────────
+
+  - name: root-cause-investigator
+    file: agents/root-cause-investigator.md
+    pipeline_step: 6
+    critical: true
+    depends_on:
+      - descriptive-analytics
+    inputs:
+      - METRIC
+      - OBSERVATION
+      - DATASET
+      - DIMENSIONS
+      - ANALYSIS_RESULTS
+      - KNOWN_CONTEXT
+    outputs:
+      - working/investigation_{{DATASET}}.md
+      - working/investigation_confirm.md
+    knowledge_context:
+      - .knowledge/datasets/{active}/schema.md
+      - .knowledge/datasets/{active}/quirks.md
+
+  # ── Phase 6: Validation & Sizing ──────────────────────────────────
+
+  - name: validation
+    file: agents/validation.md
+    pipeline_step: 7
+    critical: true
+    depends_on:
+      - root-cause-investigator
+    inputs:
+      - ANALYSIS_CODE
+      - ANALYSIS_RESULTS
+      - DATA_SOURCE
+      - VALIDATION_SCOPE
+    outputs:
+      - outputs/validation_{{DATASET_NAME}}_{{DATE}}.md
+    knowledge_context:
+      - .knowledge/datasets/{active}/schema.md
+      - .knowledge/datasets/{active}/quirks.md
+
+  - name: opportunity-sizer
+    file: agents/opportunity-sizer.md
+    pipeline_step: 8
+    critical: false
+    depends_on:
+      - validation
+    inputs:
+      - OPPORTUNITY
+      - ANALYSIS_RESULTS
+      - DATASET
+      - ASSUMPTIONS
+      - VALUE_METRICS
+    outputs:
+      - working/sizing_{{OPPORTUNITY_SLUG}}.md
+    knowledge_context:
+      - .knowledge/datasets/{active}/schema.md
+      - .knowledge/datasets/{active}/quirks.md
+
+  # ── Phase 7: Storytelling & Presentation ──────────────────────────
+
+  - name: story-architect
+    file: agents/story-architect.md
+    pipeline_step: 9
+    critical: true
+    depends_on:
+      - opportunity-sizer
+    inputs:
+      - ANALYSIS_RESULTS
+      - QUESTION_BRIEF
+      - DATASET
+      - CONTEXT
+    outputs:
+      - working/storyboard_{{DATASET}}.md
+    knowledge_context:
+      - .knowledge/datasets/{active}/manifest.yaml
+
+  - name: narrative-coherence-reviewer
+    file: agents/narrative-coherence-reviewer.md
+    pipeline_step: 10
+    critical: false
+    depends_on:
+      - story-architect
+    inputs:
+      - STORYBOARD
+      - CHART_FILES
+      - NARRATIVE
+      - DATASET
+    outputs:
+      - working/coherence_review_{{DATASET}}.md
+    knowledge_context: []
+
+  - name: chart-maker
+    file: agents/chart-maker.md
+    pipeline_step: 12
+    critical: true
+    depends_on:
+      - narrative-coherence-reviewer
+    inputs:
+      - DATA
+      - CHART_SPEC
+      - THEME
+      - OUTPUT_NAME
+    outputs:
+      - outputs/charts/{{OUTPUT_NAME}}.png
+      - outputs/charts/{{OUTPUT_NAME}}.svg
+    knowledge_context:
+      - .knowledge/datasets/{active}/manifest.yaml
+
+  - name: visual-design-critic
+    file: agents/visual-design-critic.md
+    pipeline_step: 13
+    critical: false
+    depends_on:
+      - chart-maker
+    inputs:
+      - CHART_FILES
+      - STORYBOARD
+      - DATASET
+      - THEME
+      - DECK_FILE
+    outputs:
+      - working/design_review_{{DATASET}}.md
+    knowledge_context:
+      - .knowledge/datasets/{active}/manifest.yaml
+
+  - name: chart-maker-fixes
+    file: agents/chart-maker.md
+    pipeline_step: 14
+    critical: true
+    depends_on:
+      - visual-design-critic
+    inputs:
+      - DATA
+      - CHART_SPEC
+      - THEME
+      - OUTPUT_NAME
+      - FIX_REPORT
+    outputs:
+      - outputs/charts/{{OUTPUT_NAME}}.png
+    knowledge_context:
+      - .knowledge/datasets/{active}/manifest.yaml
+    # Only runs when visual-design-critic verdict is APPROVED WITH FIXES.
+    # Skipped when verdict is APPROVED. Pipeline HALTs when NEEDS REVISION.
+    conditional: true
+
+  - name: storytelling
+    file: agents/storytelling.md
+    pipeline_step: 15
+    critical: true
+    depends_on:
+      - visual-design-critic
+    inputs:
+      - ANALYSIS_RESULTS
+      - QUESTION_BRIEF
+      - AUDIENCE
+      - STORYBOARD
+      - TONE
+    outputs:
+      - outputs/narrative_{{DATASET_NAME}}_{{DATE}}.md
+    knowledge_context:
+      - .knowledge/datasets/{active}/manifest.yaml
+
+  - name: deck-creator
+    file: agents/deck-creator.md
+    pipeline_step: 16
+    critical: true
+    depends_on:
+      - storytelling
+    inputs:
+      - NARRATIVE
+      - CHARTS
+      - THEME
+      - FORMAT
+      - CONTEXT
+      - AUDIENCE
+      - STORYBOARD
+      - DECK_TITLE
+    outputs:
+      - outputs/deck_{{DATASET_NAME}}_{{DATE}}.md
+      - outputs/deck_{{DATASET_NAME}}_{{DATE}}.marp.md
+      - outputs/deck_{{DATASET_NAME}}_{{DATE}}.pdf
+      - outputs/deck_{{DATASET_NAME}}_{{DATE}}.html
+    knowledge_context:
+      - .knowledge/datasets/{active}/manifest.yaml
+
+  - name: visual-design-critic-slides
+    file: agents/visual-design-critic.md
+    pipeline_step: 17
+    critical: false
+    depends_on:
+      - deck-creator
+    inputs:
+      - DECK_FILE
+      - THEME
+      - CHART_FILES
+      - STORYBOARD
+      - DATASET
+    outputs:
+      - working/slide_review_{{DATASET}}.md
+    knowledge_context:
+      - .knowledge/datasets/{active}/manifest.yaml
+
+  # ── Phase 8: Close the Loop ────────────────────────────────────────
+
+  - name: close-the-loop
+    file: skills/close-the-loop.md
+    pipeline_step: 18
+    critical: true
+    depends_on:
+      - visual-design-critic-slides
+    inputs:
+      - ANALYSIS_RESULTS
+      - RECOMMENDATIONS
+      - DECK_FILE
+    outputs:
+      - outputs/close_the_loop_{{DATE}}.md
+    knowledge_context: []
+
+  # ── Standalone (no pipeline_step) ─────────────────────────────────
+
+  - name: experiment-designer
+    file: agents/experiment-designer.md
+    pipeline_step: null
+    critical: true
+    depends_on:
+      - hypothesis
+    inputs:
+      - HYPOTHESIS
+      - DATASET
+      - CONSTRAINTS
+    outputs:
+      - working/experiment_design_{{HYPOTHESIS_SLUG}}.md
+    knowledge_context:
+      - .knowledge/datasets/{active}/schema.md
+      - .knowledge/datasets/{active}/quirks.md
+
+  - name: comms-drafter
+    file: agents/comms-drafter.md
+    pipeline_step: null
+    critical: false
+    depends_on_any:
+      - storytelling
+      - validation
+    inputs:
+      - NARRATIVE
+      - FINDINGS
+      - RECOMMENDATIONS
+      - CONFIDENCE_GRADE
+      - AUDIENCE
+      - EXPORT_FORMAT
+    outputs:
+      - working/comms_draft.md
+    knowledge_context: []

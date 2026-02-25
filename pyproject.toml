@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-analyst"
+version = "1.0.0"
+description = "Claude Code-powered product analytics toolkit"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "Shane Butler", email = "shane@aianalystlab.ai"},
+]
+
+dependencies = [
+    "pandas>=1.5",
+    "matplotlib>=3.6",
+    "duckdb>=0.9",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "faker>=18.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --tb=short"
+markers = [
+    "slow: marks tests as slow (deselect with -m 'not slow')",
+    "integration: marks tests as integration tests",
+    "statistical: marks tests as statistical tests",
+]
+
+[tool.setuptools.packages.find]
+include = ["helpers*"]

@@ -1,0 +1,1641 @@
+/* @theme analytics-dark */
+
+@import 'default';
+
+/* ============================================
+   AI Analyst Lab — Analytics Dark Theme
+   For: Workshop presentations, talks, screen-share
+   Design: Warm dark + amber accent, chart-friendly
+   ============================================ */
+
+/* --- Dark Design Tokens --- */
+:root {
+  --dk-bg: #1A1A17;
+  --dk-surface: #222220;
+  --dk-elevated: #2A2A27;
+  --dk-text: #F5F5F0;
+  --dk-text-secondary: #A8A090;
+  --dk-text-muted: #8A8580;
+  --dk-accent: #D97706;
+  --dk-accent-light: #F0A060;
+  --dk-accent-secondary: #F59E0B;
+  --dk-border: #363532;
+  --dk-positive: #22C55E;
+  --dk-positive-bg: rgba(34, 197, 94, 0.08);
+  --dk-negative: #EF4444;
+  --dk-negative-bg: rgba(239, 68, 68, 0.08);
+  --dk-accent-text: #F0A060;
+  --font-heading: -apple-system, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-body: -apple-system, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* ============================================
+   BASE SECTION (every slide)
+   ============================================ */
+
+section {
+  background:
+    radial-gradient(ellipse at 50% 50%, transparent 50%, rgba(0,0,0,0.12) 100%),
+    var(--dk-bg);
+  color: var(--dk-text);
+  font-family: var(--font-body);
+  font-size: 24px;
+  line-height: 1.5;
+  padding: 60px 80px;
+  justify-content: flex-start;
+  border-left: 3px solid rgba(217, 119, 6, 0.6);
+  overflow: hidden;
+}
+
+/* --- Image Containment (prevents chart overflow) --- */
+section img {
+  max-height: 420px;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* --- Typography --- */
+section h1 {
+  font-family: var(--font-heading);
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--dk-text);
+  margin-bottom: 24px;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+section h2 {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--dk-text);
+  margin-bottom: 20px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+section h3 {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--dk-text);
+  margin-bottom: 16px;
+}
+
+section p {
+  font-size: 24px;
+  color: var(--dk-text-secondary);
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+section li {
+  font-size: 22px;
+  margin-bottom: 8px;
+  color: var(--dk-text);
+}
+
+section strong {
+  color: var(--dk-text);
+  font-weight: 700;
+}
+
+section p strong {
+  color: var(--dk-text);
+}
+
+section em {
+  color: var(--dk-text-secondary);
+  font-style: italic;
+}
+
+/* --- Link Override (prevent blue leak from @import 'default') --- */
+section a {
+  color: var(--dk-accent);
+  text-decoration: none;
+}
+
+section code {
+  background: var(--dk-elevated);
+  color: var(--dk-accent-light);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+/* --- Subtext / Attribution --- */
+section .subtext,
+section .source,
+section .attribution {
+  font-size: 14px;
+  color: var(--dk-text-muted);
+  margin-top: 24px;
+}
+
+/* --- Page Numbers --- */
+section::after {
+  font-size: 14px;
+  color: var(--dk-text-muted);
+}
+
+/* --- Footer (Marp footer directive) --- */
+section footer {
+  font-size: 12px;
+  color: var(--dk-text-muted);
+  letter-spacing: 0.03em;
+  bottom: 20px;
+  left: 85px;
+  width: auto;
+}
+
+section footer a {
+  color: var(--dk-text-muted);
+  text-decoration: none;
+}
+
+/* ============================================
+   SLIDE VARIANTS — Use with <!-- _class: X -->
+   ============================================ */
+
+/* --- Dark Title Slide --- */
+section.dark-title {
+  background:
+    radial-gradient(ellipse at 50% 50%, transparent 40%, rgba(0,0,0,0.18) 100%),
+    var(--dk-bg);
+  color: var(--dk-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 100px 120px;
+}
+
+section.dark-title h1 {
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--dk-text);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 24px;
+  max-width: 85%;
+}
+
+section.dark-title p {
+  font-size: 26px;
+  color: var(--dk-text-secondary);
+  line-height: 1.5;
+  max-width: 70%;
+}
+
+section.dark-title .accent-bar {
+  width: 60px;
+  height: 4px;
+  background: var(--dk-accent);
+  border-radius: 4px;
+  margin-bottom: 32px;
+}
+
+/* --- Section Opener (dark) --- */
+section.section-opener {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 80px 100px;
+  background: var(--dk-surface);
+}
+
+section.section-opener h2 {
+  font-size: 42px;
+  color: var(--dk-accent);
+  margin-bottom: 12px;
+}
+
+section.section-opener p {
+  font-size: 24px;
+  color: var(--dk-text-secondary);
+  max-width: 70%;
+}
+
+/* --- Insight Slide (dark) --- */
+section.insight {
+  padding: 50px 80px;
+}
+
+section.insight img {
+  max-height: 420px;
+}
+
+section.insight h2 {
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+/* --- Dark Impact / Statement Slide --- */
+section.dark-impact {
+  background:
+    radial-gradient(ellipse at 50% 50%, transparent 40%, rgba(0,0,0,0.2) 100%),
+    var(--dk-bg);
+  color: var(--dk-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 120px 160px;
+  border-left: 3px solid rgba(217, 119, 6, 0.6);
+}
+
+section.dark-impact h2 {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--dk-text);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+section.dark-impact p {
+  font-size: 24px;
+  color: var(--dk-text-secondary);
+  max-width: 60%;
+}
+
+section.dark-impact .hero-number {
+  font-size: 96px;
+  font-weight: 800;
+  color: var(--dk-text);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+section.dark-impact .hero-label {
+  font-size: 22px;
+  color: var(--dk-text-secondary);
+  font-weight: 400;
+}
+
+/* --- Two Column Layout --- */
+section.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 40px;
+  align-items: start;
+}
+
+section.two-col h2 {
+  grid-column: 1 / -1;
+}
+
+section.two-col .footer-text {
+  grid-column: 1 / -1;
+}
+
+/* --- Chart-Left Layout (60/40: chart left, text/callout right) --- */
+section.chart-left {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 32px;
+  align-items: center;
+  padding: 50px 80px;
+}
+
+section.chart-left h1,
+section.chart-left h2 {
+  grid-column: 1 / -1;
+}
+
+section.chart-left .footer-text,
+section.chart-left .data-source {
+  grid-column: 1 / -1;
+}
+
+section.chart-left img {
+  max-height: 400px;
+}
+
+/* --- Chart-Right Layout (40/60: text/callout left, chart right) --- */
+section.chart-right {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 32px;
+  align-items: center;
+  padding: 50px 80px;
+}
+
+section.chart-right h1,
+section.chart-right h2 {
+  grid-column: 1 / -1;
+}
+
+section.chart-right .footer-text,
+section.chart-right .data-source {
+  grid-column: 1 / -1;
+}
+
+section.chart-right img {
+  max-height: 400px;
+}
+
+/* --- Diagram Slide --- */
+section.diagram {
+  padding: 50px 60px;
+}
+
+section.diagram h2 {
+  margin-bottom: 32px;
+}
+
+section.diagram img {
+  max-height: 520px;
+}
+
+/* --- Chart Full Slide (one chart, maximum space) --- */
+section.chart-full {
+  padding: 40px 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+section.chart-full h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
+  flex-shrink: 0;
+}
+
+section.chart-full .chart-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+}
+
+section.chart-full .chart-container img {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+section.chart-full img {
+  max-height: none;
+  max-width: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+/* --- KPI Slide (2-4 metric cards) --- */
+section.kpi {
+  padding: 50px 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+section.kpi h2 {
+  font-size: 32px;
+  margin-bottom: 24px;
+  flex-shrink: 0;
+}
+
+/* --- Takeaway Slide (interpretation / so-what) --- */
+section.takeaway {
+  padding: 60px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section.takeaway h2 {
+  font-size: 36px;
+  margin-bottom: 24px;
+}
+
+section.takeaway .so-what,
+section.takeaway .finding {
+  font-size: 22px;
+}
+
+/* --- Recommendation Slide (action items) --- */
+section.recommendation {
+  padding: 50px 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+section.recommendation h2 {
+  font-size: 32px;
+  margin-bottom: 24px;
+  flex-shrink: 0;
+}
+
+/* --- Appendix Slide (methodology, caveats) --- */
+section.appendix {
+  padding: 50px 80px;
+}
+
+section.appendix h2 {
+  font-size: 28px;
+  color: var(--dk-text-secondary);
+  margin-bottom: 16px;
+}
+
+section.appendix p,
+section.appendix li {
+  font-size: 18px;
+  color: var(--dk-text-secondary);
+}
+
+/* ============================================
+   DARK TITLE / DARK IMPACT — Typography overrides
+   These must be explicit to override @import 'default'
+   ============================================ */
+
+section.dark-title h2 {
+  color: var(--dk-text);
+  font-size: 36px;
+  font-weight: 600;
+}
+
+section.dark-title h3,
+section.dark-impact h3 {
+  color: var(--dk-text);
+  font-size: 28px;
+  font-weight: 600;
+}
+
+section.dark-title p strong,
+section.dark-impact p strong {
+  color: var(--dk-text);
+}
+
+section.dark-title a,
+section.dark-impact a {
+  color: var(--dk-accent);
+  text-decoration: none;
+}
+
+section.dark-title footer,
+section.dark-impact footer {
+  font-size: 12px;
+  color: var(--dk-text-muted);
+  letter-spacing: 0.03em;
+  bottom: 20px;
+  left: 85px;
+  width: auto;
+}
+
+section.dark-title footer a,
+section.dark-impact footer a {
+  color: var(--dk-text-muted);
+  text-decoration: none;
+}
+
+section.dark-title::after,
+section.dark-impact::after {
+  font-size: 14px;
+  color: var(--dk-text-muted);
+}
+
+/* ============================================
+   ANALYTICS COMPONENTS — Dark Variants
+   Data-focused components for analytical decks
+   ============================================ */
+
+/* --- Metric Callout (single big number) --- */
+.metric-callout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.metric-callout .metric-value {
+  font-size: 96px;
+  font-weight: 800;
+  color: var(--dk-text);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.metric-callout .metric-value.positive { color: var(--dk-positive); }
+.metric-callout .metric-value.negative { color: var(--dk-negative); }
+.metric-callout .metric-value.accent { color: var(--dk-accent); }
+
+.metric-callout .metric-label {
+  font-size: 22px;
+  color: var(--dk-text-secondary);
+  font-weight: 400;
+}
+
+.metric-callout .metric-context {
+  font-size: 16px;
+  color: var(--dk-text-muted);
+  margin-top: 8px;
+}
+
+/* --- KPI Row (multiple metrics side by side) --- */
+.kpi-row {
+  display: flex;
+  gap: 24px;
+  margin: 24px 0;
+}
+
+.kpi-card {
+  flex: 1;
+  background: var(--dk-surface);
+  border: 1px solid var(--dk-border);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+}
+
+.kpi-card .kpi-value {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--dk-text);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.kpi-card .kpi-value.positive { color: var(--dk-positive); }
+.kpi-card .kpi-value.negative { color: var(--dk-negative); }
+.kpi-card .kpi-value.accent { color: var(--dk-accent); }
+
+.kpi-card .kpi-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--dk-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.kpi-card .kpi-delta {
+  font-size: 14px;
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+.kpi-card .kpi-delta.up { color: var(--dk-positive); }
+.kpi-card .kpi-delta.down { color: var(--dk-negative); }
+
+/* --- Chart Container --- */
+.chart-container {
+  background: var(--dk-surface);
+  border: 1px solid var(--dk-border);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 16px 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chart-container img {
+  max-width: 100%;
+  max-height: 380px;
+  object-fit: contain;
+  flex: 0 1 auto;
+}
+
+.chart-container .chart-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--dk-text);
+  margin-bottom: 12px;
+  align-self: flex-start;
+}
+
+.chart-container .chart-source {
+  font-size: 12px;
+  color: var(--dk-text-muted);
+  margin-top: 8px;
+  text-align: right;
+  align-self: flex-end;
+}
+
+/* --- Finding Card (insight with "so what") --- */
+.finding {
+  background: var(--dk-surface);
+  border: 1px solid var(--dk-border);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 16px 0;
+  border-left: 4px solid var(--dk-accent);
+}
+
+.finding .finding-headline {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dk-text);
+  margin-bottom: 8px;
+}
+
+.finding .finding-detail {
+  font-size: 16px;
+  color: var(--dk-text-secondary);
+  margin-bottom: 12px;
+}
+
+.finding .finding-impact {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--dk-accent-light);
+  background: rgba(217, 119, 6, 0.08);
+  padding: 8px 16px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+/* --- So-What Callout --- */
+section.insight .so-what,
+.so-what {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--dk-accent-light);
+  background: rgba(217, 119, 6, 0.08);
+  padding: 12px 20px;
+  border-radius: 8px;
+  border-left: 3px solid var(--dk-accent);
+  margin-top: 16px;
+}
+
+/* --- Callout Box --- */
+.callout {
+  background: rgba(217, 119, 6, 0.08);
+  border-left: 4px solid var(--dk-accent);
+  border-radius: 0 8px 8px 0;
+  padding: 16px 24px;
+  margin: 16px 0;
+}
+
+.callout .callout-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--dk-accent-light);
+  margin-bottom: 4px;
+}
+
+.callout .callout-text {
+  font-size: 16px;
+  color: var(--dk-text-secondary);
+}
+
+/* ============================================
+   LAYOUT COMPONENTS — Dark Variants
+   ============================================ */
+
+/* --- Flow Diagram (horizontal steps) --- */
+.flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin: 24px 0;
+  flex-wrap: nowrap;
+}
+
+.flow-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 16px 12px;
+  min-width: 100px;
+}
+
+.flow-step .icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.flow-step .label {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--dk-text);
+  margin-bottom: 4px;
+}
+
+.flow-step .caption {
+  font-size: 13px;
+  color: var(--dk-text-secondary);
+  max-width: 120px;
+}
+
+.flow-arrow {
+  font-size: 24px;
+  color: var(--dk-accent);
+  margin: 0 4px;
+  flex-shrink: 0;
+  font-family: "Apple Color Emoji", "Segoe UI Symbol", "Noto Sans Symbols 2", sans-serif;
+}
+
+/* --- Vertical Flow --- */
+.vflow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin: 16px 0;
+}
+
+.vflow-step {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--dk-surface);
+  border: 1px solid var(--dk-border);
+  border-radius: 10px;
+  padding: 14px 24px;
+  min-width: 400px;
+}
+
+.vflow-step .icon {
+  font-size: 24px;
+}
+
+.vflow-step .label {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--dk-text);
+}
+
+.vflow-step .caption {
+  font-size: 14px;
+  color: var(--dk-text-secondary);
+}
+
+.vflow-arrow {
+  font-size: 20px;
+  color: var(--dk-accent);
+  margin: 4px 0;
+  font-family: "Apple Color Emoji", "Segoe UI Symbol", "Noto Sans Symbols 2", sans-serif;
+}
+
+/* --- Box Grid (2x2 or 2x3 cards) --- */
+.box-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 16px 0;
+}
+
+.box-grid.three-col {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.box-card {
+  background: var(--dk-surface);
+  border: 1px solid var(--dk-border);
+  border-radius: 12px;
+  padding: 20px 24px;
+}
+
+.box-card.accent {
+  border-color: var(--dk-accent);
+  border-left: 4px solid var(--dk-accent);
+}
+
+.box-card .card-icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.box-card .card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dk-accent-light);
+  margin-bottom: 6px;
+}
+
+.box-card .card-desc {
+  font-size: 14px;
+  color: var(--dk-text-secondary);
+  line-height: 1.4;
+}
+
+/* --- Before/After Two-Panel --- */
+.before-after {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin: 24px 0;
+}
+
+.panel {
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.panel.before {
+  background: rgba(245,245,240,0.05);
+  border: 1px solid rgba(245,245,240,0.10);
+}
+
+.panel.after {
+  background: rgba(217,119,6,0.06);
+  border: 1px solid rgba(217,119,6,0.20);
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.2),
+    0 8px 16px rgba(0,0,0,0.12);
+}
+
+.panel .panel-label {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+.panel.before .panel-label { color: var(--dk-text-muted); }
+.panel.after .panel-label { color: var(--dk-accent-light); }
+
+.panel .panel-desc {
+  font-size: 20px;
+  color: var(--dk-text-secondary);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.panel .panel-text {
+  font-size: 18px;
+  color: var(--dk-text-secondary);
+}
+
+.panel .panel-time {
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-top: 8px;
+}
+
+.panel.before .panel-time { color: var(--dk-text-secondary); }
+.panel.after .panel-time { color: var(--dk-accent); }
+
+/* --- Comparison Table --- */
+section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 18px;
+  background: transparent;
+}
+
+section table th {
+  background: var(--dk-elevated);
+  color: var(--dk-text);
+  font-weight: 700;
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 16px;
+  border-bottom: 2px solid var(--dk-accent);
+}
+
+section table th.accent {
+  background: var(--dk-accent);
+  color: var(--dk-bg);
+}
+
+section table td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--dk-border);
+  color: var(--dk-text-secondary);
+  background: transparent;
+}
+
+section table td strong {
+  color: var(--dk-accent-light);
+  font-weight: 700;
+}
+
+section table tr:nth-child(even) td {
+  background: rgba(245,245,240,0.04);
+}
+
+section table code {
+  background: var(--dk-elevated);
+  color: var(--dk-accent-light);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+/* --- Dark-title and dark-impact table overrides --- */
+section.dark-title table th,
+section.dark-impact table th {
+  background: var(--dk-elevated);
+  color: var(--dk-text);
+  border-bottom: 2px solid var(--dk-accent);
+}
+
+section.dark-title table td,
+section.dark-impact table td {
+  border-bottom: 1px solid var(--dk-border);
+  color: var(--dk-text-secondary);
+  background: transparent;
+}
+
+section.dark-title table td strong,
+section.dark-impact table td strong {
+  color: var(--dk-accent-light);
+}
+
+section.dark-title table tr:nth-child(even) td,
+section.dark-impact table tr:nth-child(even) td {
+  background: rgba(245,245,240,0.04);
+}
+
+/* --- Recommendation Row --- */
+.rec-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--dk-border);
+}
+
+.rec-row:last-child {
+  border-bottom: none;
+}
+
+.rec-row .rec-number {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--dk-accent);
+  min-width: 36px;
+}
+
+.rec-row .rec-content {
+  flex: 1;
+}
+
+.rec-row .rec-action {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dk-text);
+  margin-bottom: 4px;
+}
+
+.rec-row .rec-rationale {
+  font-size: 16px;
+  color: var(--dk-text-secondary);
+}
+
+.rec-row .rec-confidence {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.rec-row .rec-confidence.high {
+  background: var(--dk-positive-bg);
+  color: var(--dk-positive);
+}
+
+.rec-row .rec-confidence.medium {
+  background: rgba(217, 119, 6, 0.10);
+  color: var(--dk-accent-light);
+}
+
+.rec-row .rec-confidence.low {
+  background: rgba(245,245,240,0.06);
+  color: var(--dk-text-muted);
+}
+
+/* --- Timeline (horizontal) --- */
+.timeline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0;
+  margin: 24px 0;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 5%;
+  right: 5%;
+  height: 2px;
+  background: var(--dk-border);
+}
+
+.timeline-stop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  flex: 1;
+}
+
+.timeline-stop .dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--dk-border);
+  border: 2px solid var(--dk-bg);
+  box-shadow: 0 0 0 1px var(--dk-border);
+  margin-bottom: 12px;
+}
+
+.timeline-stop.active .dot {
+  width: 18px;
+  height: 18px;
+  background: var(--dk-accent);
+  border: 2px solid var(--dk-bg);
+  box-shadow: 0 0 0 2px var(--dk-accent), 0 0 12px rgba(217,119,6,0.25);
+}
+
+.timeline-stop .stop-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--dk-text);
+  margin-bottom: 4px;
+}
+
+.timeline-stop .stop-desc {
+  font-size: 12px;
+  color: var(--dk-text-secondary);
+  max-width: 120px;
+}
+
+/* --- Layers (three-layer diagram) --- */
+.layers {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.layer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  border-radius: 10px;
+  border: 1px solid var(--dk-border);
+  background: var(--dk-surface);
+}
+
+.layer.accent {
+  border-color: var(--dk-accent);
+  background: rgba(217, 119, 6, 0.06);
+}
+
+.layer.positive {
+  border-color: var(--dk-positive);
+  background: var(--dk-positive-bg);
+}
+
+.layer.blue,
+.layer.primary {
+  border-color: rgba(217,119,6,0.25);
+  background: rgba(217,119,6,0.06);
+}
+
+.layer.green,
+.layer.secondary {
+  border-color: rgba(245,158,11,0.2);
+  background: rgba(245,158,11,0.04);
+}
+
+.layer.orange,
+.layer.tertiary {
+  border-color: rgba(240,160,96,0.2);
+  background: rgba(240,160,96,0.04);
+}
+
+.layer .layer-icon { font-size: 28px; }
+.layer .layer-title { font-size: 20px; font-weight: 700; color: var(--dk-text); }
+.layer .layer-desc { font-size: 14px; color: var(--dk-text-secondary); }
+
+/* --- Architecture Diagram (labeled boxes) --- */
+.arch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.arch-row {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.arch-box {
+  border: 1px solid var(--dk-border);
+  border-radius: 10px;
+  padding: 16px 20px;
+  text-align: center;
+  min-width: 160px;
+  background: var(--dk-surface);
+}
+
+.arch-box.blue,
+.arch-box.primary {
+  border-color: rgba(217,119,6,0.3);
+  background: rgba(217,119,6,0.06);
+}
+
+.arch-box.green,
+.arch-box.secondary {
+  border-color: rgba(245,158,11,0.25);
+  background: rgba(245,158,11,0.05);
+}
+
+.arch-box.orange,
+.arch-box.tertiary {
+  border-color: rgba(240,160,96,0.25);
+  background: rgba(240,160,96,0.05);
+}
+
+.arch-box.gray {
+  border-color: var(--dk-border);
+  background: var(--dk-elevated);
+}
+
+.arch-box .box-label {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--dk-text);
+  margin-bottom: 4px;
+}
+
+.arch-box .box-sublabel {
+  font-size: 12px;
+  color: var(--dk-text-secondary);
+}
+
+/* Dark-title and dark-impact arch-box overrides */
+section.dark-title .arch-box,
+section.dark-impact .arch-box {
+  border: 1px solid var(--dk-border);
+  background: var(--dk-surface);
+}
+
+section.dark-title .arch-box.blue,
+section.dark-title .arch-box.primary,
+section.dark-impact .arch-box.blue,
+section.dark-impact .arch-box.primary {
+  border-color: rgba(217,119,6,0.3);
+  background: rgba(217,119,6,0.06);
+}
+
+section.dark-title .arch-box.green,
+section.dark-title .arch-box.secondary,
+section.dark-impact .arch-box.green,
+section.dark-impact .arch-box.secondary {
+  border-color: rgba(245,158,11,0.25);
+  background: rgba(245,158,11,0.05);
+}
+
+section.dark-title .arch-box.orange,
+section.dark-title .arch-box.tertiary,
+section.dark-impact .arch-box.orange,
+section.dark-impact .arch-box.tertiary {
+  border-color: rgba(240,160,96,0.25);
+  background: rgba(240,160,96,0.05);
+}
+
+section.dark-title .arch-box.gray,
+section.dark-impact .arch-box.gray {
+  border-color: var(--dk-border);
+  background: var(--dk-elevated);
+}
+
+section.dark-title .arch-box .box-label,
+section.dark-impact .arch-box .box-label {
+  color: var(--dk-text);
+}
+
+section.dark-title .arch-box .box-sublabel,
+section.dark-impact .arch-box .box-sublabel {
+  color: var(--dk-text-secondary);
+}
+
+/* --- Checklist --- */
+.checklist {
+  list-style: none;
+  padding: 0;
+}
+
+.checklist li {
+  font-size: 22px;
+  padding: 8px 0 8px 36px;
+  position: relative;
+  color: var(--dk-text);
+}
+
+.checklist li::before {
+  content: '\2610';
+  position: absolute;
+  left: 0;
+  font-size: 22px;
+  color: var(--dk-text-muted);
+}
+
+.checklist li.done::before {
+  content: '\2713';
+  color: var(--dk-positive);
+  font-weight: 700;
+}
+
+/* --- Badge / Tag --- */
+.badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 10px;
+  margin-left: 8px;
+}
+
+.badge.positive {
+  background: var(--dk-positive-bg);
+  color: var(--dk-positive);
+}
+
+.badge.negative {
+  background: var(--dk-negative-bg);
+  color: var(--dk-negative);
+}
+
+.badge.accent {
+  background: rgba(217, 119, 6, 0.12);
+  color: var(--dk-accent-light);
+}
+
+.badge.neutral {
+  background: rgba(245,245,240,0.06);
+  color: var(--dk-text-secondary);
+}
+
+.badge.quick {
+  background: rgba(245,158,11,0.12);
+  color: var(--dk-accent-secondary);
+}
+
+.badge.medium {
+  background: rgba(217,119,6,0.12);
+  color: var(--dk-accent-light);
+}
+
+.badge.advanced {
+  background: rgba(240,160,96,0.12);
+  color: var(--dk-accent-light);
+}
+
+/* --- Loop Diagram --- */
+.loop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 0;
+  padding: 20px;
+  border: 1px solid var(--dk-border);
+  border-radius: 16px;
+  background: var(--dk-surface);
+}
+
+.loop-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  color: var(--dk-text);
+}
+
+.loop-step .icon { font-size: 22px; }
+.loop-step .label { font-weight: 600; color: var(--dk-text); }
+
+.loop-arrow {
+  font-size: 18px;
+  color: var(--dk-accent);
+}
+
+.loop-center {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--dk-accent-light);
+  margin: 8px 0;
+}
+
+/* --- Journey (vertical timeline) --- */
+.journey {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 8px 0;
+  position: relative;
+  padding-left: 24px;
+}
+
+.journey::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--dk-border), var(--dk-accent-secondary), var(--dk-accent));
+}
+
+.journey-step {
+  position: relative;
+  padding: 8px 0 8px 24px;
+}
+
+.journey-step::before {
+  content: '';
+  position: absolute;
+  left: -21px;
+  top: 14px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--dk-border);
+  border: 2px solid var(--dk-bg);
+}
+
+.journey-step.current::before {
+  background: var(--dk-accent);
+  box-shadow: 0 0 8px rgba(217,119,6,0.3);
+  width: 12px;
+  height: 12px;
+  left: -22px;
+}
+
+.journey-step .step-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--dk-text);
+  margin-bottom: 2px;
+}
+
+.journey-step .step-desc {
+  font-size: 13px;
+  color: var(--dk-text-secondary);
+}
+
+/* --- Week Cards (course timeline) --- */
+.week-grid {
+  display: flex;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.week-card {
+  flex: 1;
+  border: 1px solid var(--dk-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.week-card .week-header {
+  background: var(--dk-accent);
+  color: var(--dk-bg);
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.week-card .week-body {
+  padding: 12px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--dk-text-secondary);
+  background: var(--dk-surface);
+}
+
+.week-card .week-title {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--dk-text);
+  margin-bottom: 6px;
+}
+
+/* --- Pricing Table --- */
+.pricing {
+  background: var(--dk-surface);
+  border: 1px solid var(--dk-border);
+  border-radius: 16px;
+  padding: 32px 40px;
+  margin: 16px 0;
+}
+
+.pricing .price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  font-size: 22px;
+  color: var(--dk-text);
+}
+
+.pricing .price-row.header {
+  font-weight: 400;
+  color: var(--dk-text-secondary);
+  border-bottom: 1px solid var(--dk-border);
+  padding-bottom: 16px;
+  margin-bottom: 8px;
+}
+
+.pricing .price-row .amount {
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--dk-text);
+}
+
+.pricing .price-row .done {
+  color: var(--dk-accent-secondary);
+  font-weight: 700;
+}
+
+.pricing .divider {
+  border-top: 1px dashed var(--dk-border);
+  margin: 16px 0;
+}
+
+.pricing .total {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.pricing .coupon {
+  display: inline-block;
+  background: var(--dk-accent);
+  color: var(--dk-bg);
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 16px;
+  letter-spacing: 1px;
+}
+
+/* --- Day Column Cards --- */
+.day-col {
+  border-radius: 16px;
+  padding: 28px 32px;
+}
+
+.day-col.day1 {
+  background: rgba(217,119,6,0.05);
+  border: 1px solid rgba(217,119,6,0.15);
+}
+
+.day-col.day2 {
+  background: rgba(245,158,11,0.04);
+  border: 1px solid rgba(245,158,11,0.13);
+}
+
+.day-col .day-icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.day-col .day-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.day-col.day1 .day-title { color: var(--dk-accent-light); }
+.day-col.day2 .day-title { color: var(--dk-accent-secondary); }
+
+.day-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.day-col li {
+  font-size: 20px;
+  padding: 6px 0;
+  color: var(--dk-text);
+  padding-left: 20px;
+  position: relative;
+}
+
+.day-col li::before {
+  content: '>';
+  position: absolute;
+  left: 0;
+  color: var(--dk-text-muted);
+  font-weight: 600;
+}
+
+.day-col.day1 li::before { color: rgba(217,119,6,0.5); }
+.day-col.day2 li::before { color: rgba(245,158,11,0.45); }
+
+/* --- Option Grid --- */
+.option-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 8px 0;
+}
+
+.option-card {
+  border: 1px solid var(--dk-border);
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+  background: var(--dk-surface);
+}
+
+.option-card.skill {
+  border-color: rgba(245,158,11,0.25);
+  background: rgba(245,158,11,0.04);
+}
+
+.option-card.agent {
+  border-color: rgba(217,119,6,0.25);
+  background: rgba(217,119,6,0.04);
+}
+
+.option-card .opt-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--dk-text);
+  margin-bottom: 4px;
+}
+
+.option-card .opt-desc {
+  font-size: 12px;
+  color: var(--dk-text-secondary);
+}
+
+/* --- Data Source Attribution --- */
+.data-source {
+  font-size: 12px;
+  color: var(--dk-text-muted);
+  text-align: right;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--dk-border);
+}
+
+/* --- Separator --- */
+.divider {
+  border-top: 2px dashed var(--dk-border);
+  margin: 16px 0;
+}
+
+/* ============================================
+   DELTA / CHANGE INDICATORS
+   ============================================ */
+
+.delta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.delta.up { color: var(--dk-positive); }
+.delta.down { color: var(--dk-negative); }
+.delta.flat { color: var(--dk-text-muted); }
+
+.delta .arrow {
+  font-size: 14px;
+}
+
+/* ============================================
+   PRINT-FRIENDLY OVERRIDES
+   ============================================ */
+
+@media print {
+  section {
+    border-left: none;
+  }
+}

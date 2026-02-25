@@ -1,0 +1,12 @@
+# Analysis Patterns — recurring analytical patterns detected across analyses
+# Populated by the patterns skill after 3+ analyses
+schema_version: 1
+patterns: []
+# Entry format:
+#   - id: "PAT-001"
+#     pattern: "Seasonal Q4 revenue spike"
+#     frequency: 3
+#     datasets: ["ecommerce_prod"]
+#     first_seen: "2026-01-15"
+#     description: "Revenue shows consistent 15-20% uplift in Q4"
+#     implication: "Normalize YoY comparisons by removing Q4 effect"

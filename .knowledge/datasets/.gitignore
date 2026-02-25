@@ -1,0 +1,19 @@
+# Gitignore for .knowledge/datasets/
+# Dataset brains are per-org, gitignored by default.
+# User-created datasets and profiling results are not.
+
+# Profiling results (generated, not source-controlled)
+*/last_profile.md
+
+# User-created dataset brains (created by /connect-data)
+# Uncomment and add specific dataset names to ignore:
+# my_dataset/
+
+# Dataset-specific data files are gitignored — only schemas and metrics are tracked
+# Raw data and connection secrets should never be committed
+*.duckdb
+*.db
+*.sqlite
+*.parquet
+credentials.*
+secrets.*

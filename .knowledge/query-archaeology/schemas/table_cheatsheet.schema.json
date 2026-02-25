@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Table Cheatsheet",
+  "description": "Quick reference for a specific table's quirks and patterns",
+  "type": "object",
+  "required": ["table_name", "dataset"],
+  "properties": {
+    "table_name": { "type": "string" },
+    "dataset": { "type": "string" },
+    "grain": { "type": "string" },
+    "primary_key": { "type": "array", "items": { "type": "string" } },
+    "common_filters": { "type": "array", "items": { "type": "string" } },
+    "gotchas": { "type": "array", "items": { "type": "string" } },
+    "common_joins": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "target_table": { "type": "string" },
+          "join_key": { "type": "string" },
+          "cardinality": { "type": "string" },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "updated_at": { "type": "string", "format": "date" }
+  }
+}

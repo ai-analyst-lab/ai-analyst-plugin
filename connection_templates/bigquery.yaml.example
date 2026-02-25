@@ -1,0 +1,32 @@
+# Connection Template: Google BigQuery
+# Copy to .knowledge/datasets/{name}/manifest.yaml and fill in values.
+# Requires: pip install google-cloud-bigquery
+# Auth: set GOOGLE_APPLICATION_CREDENTIALS env var or use gcloud auth.
+
+dataset_id: "{dataset_id}"
+display_name: "{Display Name}"
+description: "{Brief description of the dataset}"
+domain: "{e-commerce|saas|fintech|marketplace|other}"
+created_at: "{YYYY-MM-DD}"
+is_seed: false
+
+connection:
+  type: bigquery
+  project: "{gcp-project-id}"
+  dataset: "{bigquery_dataset}"  # Used as schema prefix
+
+summary:
+  table_count: null
+  total_rows: null
+  date_range: null
+  primary_entities: []
+  key_dimensions: []
+  last_profiled: null
+
+local_data:
+  path: null
+  duckdb: null
+
+status: active
+last_used: null
+analysis_count: 0

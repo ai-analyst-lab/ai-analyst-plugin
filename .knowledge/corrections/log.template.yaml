@@ -1,0 +1,13 @@
+# Template for a new correction entry
+# Copy this and fill in when logging a correction via /log-correction
+- id: "CORR-{N}"
+  date: null
+  severity: null
+  category: null
+  dataset: null
+  tables: []
+  description: null
+  fix: null
+  sql_before: null
+  sql_after: null
+  prevented_by: null

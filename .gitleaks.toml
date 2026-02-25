@@ -1,0 +1,24 @@
+title = "AI Analyst gitleaks config"
+
+[allowlist]
+  description = "Known safe patterns"
+  paths = [
+    '''\.yaml\.example$''',
+    '''\.json\.example$''',
+    '''data/checksums\.sha256$''',
+  ]
+  regexTarget = "match"
+  regexes = [
+    '''your-motherduck-token-here''',
+    '''your-token-here''',
+    '''your_password''',
+    '''your-proxy:port''',
+    '''placeholder''',
+  ]
+
+[[rules]]
+  id = "connection-template-credentials"
+  description = "Credentials in connection template YAML files"
+  regex = '''(password|token|secret|api_key)\s*[:=]\s*["\']?[A-Za-z0-9+/=_-]{20,}'''
+  path = '''connection_templates/.*\.yaml$'''
+  tags = ["credential"]

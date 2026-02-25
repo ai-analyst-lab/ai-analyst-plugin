@@ -1,0 +1,68 @@
+# Acme Corp brand theme
+# Inherits from themes/_base.yaml — only overrides are listed here.
+# The theme_loader deep-merges this on top of the base at runtime.
+
+theme:
+  name: "acme-corp"
+  display_name: "Acme Corp"
+  description: "Teal and coral brand theme for Acme Corp. Demonstrates how to create a custom brand theme."
+
+colors:
+  primary: "#0D9488"          # Teal — key data, call-to-action
+  secondary: "#F97316"        # Orange — secondary emphasis
+  accent: "#E11D48"           # Rose — alerts, negative, emphasis
+  background: "#FAFAF9"       # Stone white
+  text: "#1C1917"             # Stone dark — body text
+  text_light: "#57534E"       # Stone medium — captions, annotations
+  # Categorical palette (8 colors, colorblind-safe)
+  # Ordering avoids red-green adjacency: teal, orange, indigo, rose, amber, sky, emerald, slate
+  categorical:
+    - "#0D9488"   # teal
+    - "#F97316"   # orange
+    - "#6366F1"   # indigo
+    - "#E11D48"   # rose
+    - "#D97706"   # amber
+    - "#0EA5E9"   # sky
+    - "#059669"   # emerald
+    - "#64748B"   # slate
+  sequential:
+    low: "#CCFBF1"            # Lightest teal
+    mid: "#0D9488"            # Mid teal
+    high: "#134E4A"           # Darkest teal
+  diverging:
+    negative: "#E11D48"       # Rose — decline, loss
+    neutral: "#FAFAF9"        # Stone white — midpoint
+    positive: "#0D9488"       # Teal — growth, improvement
+  highlight:
+    focus: "#0D9488"          # Teal — draw attention to key data
+    comparison: "#A8A29E"     # Stone gray — de-emphasize supporting data
+    alert: "#E11D48"          # Rose — flag problems or outliers
+
+typography:
+  font_family: "Inter, Helvetica Neue, Arial, sans-serif"
+  heading_font: "Inter, Helvetica Neue, Arial, sans-serif"
+
+charts:
+  figure:
+    facecolor: "#FAFAF9"      # Match brand background
+  axes:
+    facecolor: "#FAFAF9"      # Match brand background
+    spine_color: "#D6D3D1"    # Stone 300 — subtle spines
+  bar:
+    default_color: "#A8A29E"  # Stone gray — context bars
+    highlight_color: "#0D9488" # Teal — the story bar
+  line:
+    default_color: "#A8A29E"  # Stone gray — context lines
+    highlight_color: "#0D9488" # Teal — the story line
+  annotations:
+    color: "#1C1917"          # Stone dark for readability
+    arrow_color: "#57534E"    # Stone medium arrows
+
+presentations:
+  slide_background: "#FFFFFF"
+  slide_text: "#1C1917"       # Stone dark
+  slide_accent: "#0D9488"     # Teal accent elements
+  dark:
+    slide_background: "#1C1917"  # Stone dark background
+    slide_text: "#E7E5E4"       # Stone 200 — soft light text
+    slide_accent: "#2DD4BF"     # Lighter teal for dark bg

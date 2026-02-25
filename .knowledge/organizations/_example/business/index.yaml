@@ -1,0 +1,10 @@
+# Business context index — links to all business knowledge files
+# Populated by /setup Phase 3 and iterative usage
+organization: "Example Corp"
+is_example: true
+sections:
+  glossary: glossary/terms.yaml
+  products: products/index.yaml
+  metrics: metrics/index.yaml
+  objectives: objectives/index.yaml
+  teams: teams/index.yaml

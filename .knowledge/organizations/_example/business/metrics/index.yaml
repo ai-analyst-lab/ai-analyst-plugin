@@ -1,0 +1,9 @@
+# Key business metrics — populated by /setup and /metrics skill
+metrics: []
+# Example entry:
+#   - name: "conversion_rate"
+#     display_name: "Conversion Rate"
+#     definition: "Users who complete purchase / Users who visit product page"
+#     owner: "Growth Team"
+#     target: 0.035
+#     guardrails: ["cart_abandonment_rate", "aov"]

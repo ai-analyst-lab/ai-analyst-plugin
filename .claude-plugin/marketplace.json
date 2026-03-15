@@ -1,0 +1,14 @@
+{
+  "name": "ai-analyst",
+  "owner": {
+    "name": "ai-analyst-lab"
+  },
+  "plugins": [
+    {
+      "name": "ai-analyst",
+      "source": ".",
+      "description": "Turns Claude into an AI Product Analyst for product teams — funnel analysis, segmentation, root cause investigation, trend analysis, metric definition, and storytelling with validated slide decks.",
+      "version": "1.0.0"
+    }
+  ]
+}

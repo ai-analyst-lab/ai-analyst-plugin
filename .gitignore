@@ -11,3 +11,5 @@ lint-allow.txt
 ai-analyst-plus-preaudit/
 __pycache__/
 *.pyc
+EVAL-DESIGN.md
+eval/

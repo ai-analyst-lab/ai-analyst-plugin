@@ -1,6 +1,0 @@
-| round | id | capability | grade | verdict | defect classes | evidence |
-|---|---|---|---|---|---|---|
-| 1 | S18 | experiment readout: SRM gate before lift | B | PASS | WRONG-INSTRUCTION (srm-check doc key `chi2` vs shipped `chi2_stat`), AMBIGUOUS (positional-vs-keyword call guidance) | eval/results/S18.md |
-| 1 | S19 | experiment brief: pre-registered, powered, data-validated | B | PASS | AMBIGUOUS (feasibility flag vocab: skill VIABLE/LONG/IMPRACTICAL vs script VIABLE/MARGINAL/NOT_VIABLE), WRONG-INSTRUCTION (stale .claude/skills/ path refs) | eval/results/S19.md |
-| 1 | S20 | causal pipeline: confounded adoption-retention question | C | PASS | MISSING-PIECE (propensity scores not returned for check_common_support), BROKEN-SCRIPT (rosenbaum_bounds ties bug -> p=1.0 on binary outcomes), AMBIGUOUS (sensitivity agent cites experiment_stats not causal_stats) | eval/results/S20.md |
-| 1 | S21 | forecast: seasonality, band, SWD chart | C | PARTIAL | BROKEN-SCRIPT (detect_seasonality cannot crown last lag: annual/monthly missed at ACF 0.85; seasonal_naive hardcoded 7-cycle fallback), MISSING-PIECE (exponential_smoothing has no forecast output), WRONG-INSTRUCTION (in-sample MSE selection picks non-forecasting model), AMBIGUOUS (sufficiency thresholds in days vs points) | eval/results/S21.md |

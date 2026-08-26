@@ -11,12 +11,18 @@ This guide takes you from nothing to a finished analysis: a written brief and a 
 ## Step 2: Install the AI Analyst Plus plugin
 
 1. In Cowork, go to **Customize > Plugins**.
-2. Choose **Add marketplace** and paste this repository: `ai-analyst-lab/ai-analyst-plugin`
+2. Open **Plugins** from the left sidebar (the plug icon), click **Add**, then **Add marketplace**. Paste this repository URL and click **Sync**:
+
+```
+https://github.com/ai-analyst-lab/ai-analyst-plugin
+```
+
+Turn on **Sync automatically** if you want updates when the plugin improves. You will see a standard warning that marketplace plugins are not controlled by Anthropic; the code is public at the same link.
 3. Find **AI Analyst Plus** in the list and click **Install**.
 
 Two settings make the plugin reliable:
 
-- **Add the global instruction.** In **Settings > Cowork > Global instructions**, paste this line: `For data analysis tasks, use the ai-analyst-plus skills and start from its decision-framing step.
+- **Add the global instruction.** In **Settings > Cowork (the instructions box), then Save**, paste this line: `For data analysis tasks, use the ai-analyst-plus skills and start from its decision-framing step.
 
 One more habit that matters: start data questions with the /analyst command. Cowork chooses skills
 per task on its own, and it will often skip installed skills on a casual question. /analyst invokes
@@ -33,7 +39,7 @@ Keep it to one or two files for your first run.
 
 ## Step 4: Work in the folder
 
-1. In Cowork, choose **Work in a folder** and pick the folder you just made.
+1. In Cowork, choose **Project or folder > Add a folder** and pick the folder you just made.
 2. Claude can now read the files in that folder and save new files into it. This folder is also where the plugin keeps its memory: a `.knowledge/` folder with dataset notes and logged corrections. Say yes when Claude offers to create it.
 
 ## Step 5: Ask a decision-shaped question
@@ -73,7 +79,7 @@ Before you act on the answer, check it. The plugin makes Claude show its checks,
 
 - **Claude cannot read the file.** Keep files under 50 MB. If your export is bigger, filter it to a shorter date range before exporting.
 - **The results look wrong.** Plain columnar CSVs work best: one header row, one record per row. Exports with merged cells, multiple sheets of summary tables, or title rows above the header confuse the profiling step. Re-export as a flat CSV.
-- **Claude did not save files.** Make sure you picked **Work in a folder** rather than attaching the file to a chat message.
+- **Claude did not save files.** Make sure you picked **Project or folder > Add a folder** rather than attaching the file to a chat message.
 - **The wrong skills fire.** Check that Anthropic's Data Analyst plugin is disabled and the global instruction from Step 2 is in place. `/analyst` always starts the AI Analyst Plus method explicitly.
 
 ## Go deeper

@@ -12,7 +12,7 @@ Two entry points:
 ## Install in Claude Cowork
 
 1. Open Cowork in the Claude desktop app.
-2. Go to **Customize > Plugins > Add marketplace**.
+2. Go to **Plugins (left sidebar) > Add > Add marketplace, paste the repo URL, click Sync**.
 3. Paste this repository: `ai-analyst-lab/ai-analyst-plugin`
 4. Find **AI Analyst Plus** and click **Install**.
 

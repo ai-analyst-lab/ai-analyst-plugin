@@ -1,0 +1,13 @@
+# Internal build/audit tooling: never ships to the public repo
+PORT-SPEC.md
+PRODUCTION-READY-PLAN.md
+AUDIT-DESIGN.md
+FIX-DESIGN.md
+sweep-findings.md
+port-report.md
+port.py
+port-lint.py
+lint-allow.txt
+ai-analyst-plus-preaudit/
+__pycache__/
+*.pyc

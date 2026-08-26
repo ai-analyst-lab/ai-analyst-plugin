@@ -1,0 +1,8 @@
+{
+  "name": "ai-analyst-plus",
+  "version": "1.0.0",
+  "description": "The full AI Analyst skill system for data analysis in Claude Cowork: decision framing, data profiling, validated analysis, visualization, and a working-folder memory that learns your corrections.",
+  "author": {
+    "name": "AI Analyst Lab"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "cowork-analyst-starter",
+  "owner": {
+    "name": "AI Analyst Lab"
+  },
+  "plugins": [
+    {
+      "name": "ai-analyst-plus",
+      "displayName": "AI Analyst Plus",
+      "source": "./ai-analyst-plus",
+      "description": "The full AI Analyst skill system for data analysis in Claude Cowork: decision framing, data profiling, validated analysis, visualization, and a working-folder memory that learns your corrections."
+    }
+  ]
+}

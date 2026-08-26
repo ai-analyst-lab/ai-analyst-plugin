@@ -1,0 +1,4 @@
+| 1 | S10 | single-column deep-dive (distribution-profiler) | C | PASS | MISSING-PIECE (statistical-distributions-guide.md nowhere in plugin; Rule 5 unsatisfiable) | eval/results/S10.md |
+| 1 | S11 | quality gate (data-quality-check validators) | C | PARTIAL | CONTRADICTION (3-way null-severity disagreement), BROKEN-SCRIPT (date_range ok=True on int64 garbage), AMBIGUOUS (expected_types absent from example config) | eval/results/S11.md |
+| 1 | S13 | compare two exports (compare-datasets) | C | PASS | AMBIGUOUS (no row-count/key-diff step; drift found by improvisation), CONTRADICTION (.knowledge/global/ not in KNOWLEDGE.md contract) | eval/results/S13.md |
+| 1 | S17 | metric definition round-trip (metric-spec -> metrics) + ARR routing | B | PASS | CONTRADICTION (metric YAML schema mismatch between metric-spec and metrics), AMBIGUOUS (ARR routing: both descriptions claim it), MISSING-PIECE (/setup referenced by business, not shipped) | eval/results/S17.md |

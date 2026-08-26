@@ -1,9 +1,9 @@
 # The Decision-Shaped Prompt
 
-Copy this, fill in the blanks, and paste it into Cowork after choosing your data folder.
+Copy this, fill in the blanks, and paste it into Cowork after choosing your data folder. Start with /analyst so the full method runs by name.
 
 ```
-Look at the [data] in this folder, using [files].
+/analyst Look at the [data] in this folder, using [files].
 I [role], and I need to decide [decision].
 [Analysis ask].
 Save me [deliverable].
@@ -26,7 +26,7 @@ The last line is not decoration. It gives Claude standing permission to bring yo
 ## A filled-in example
 
 ```
-Look at the coffee shop sales data in this folder, using sales_2025.csv.
+/analyst Look at the coffee shop sales data in this folder, using sales_2025.csv.
 I run the shop, and I need to decide whether to keep the Tuesday pastry promotion.
 Compare Tuesday sales before and after the promotion started in June,
 and check whether the lift holds outside of pastries.

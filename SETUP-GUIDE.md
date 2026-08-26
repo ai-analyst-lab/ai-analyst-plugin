@@ -16,7 +16,11 @@ This guide takes you from nothing to a finished analysis: a written brief and a 
 
 Two settings make the plugin reliable:
 
-- **Add the global instruction.** In **Settings > Cowork > Global instructions**, paste this line: `For data analysis tasks, use the ai-analyst-plus skills and start from its decision-framing step.` This applies to every session and makes sure analysis questions route to this plugin's method.
+- **Add the global instruction.** In **Settings > Cowork > Global instructions**, paste this line: `For data analysis tasks, use the ai-analyst-plus skills and start from its decision-framing step.
+
+One more habit that matters: start data questions with the /analyst command. Cowork chooses skills
+per task on its own, and it will often skip installed skills on a casual question. /analyst invokes
+the full method by name, every time. The global instruction above helps; the command is certain.` This applies to every session and makes sure analysis questions route to this plugin's method.
 - **Disable the overlap.** If you have Anthropic's Data Analyst plugin installed, disable it while using this one. The two compete for the same tasks, and this one runs a stricter method.
 
 ## Step 3: Make a data folder

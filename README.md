@@ -13,7 +13,7 @@ Two entry points:
 
 1. Open Cowork in the Claude desktop app.
 2. Go to **Customize > Plugins > Add marketplace**.
-3. Paste this repository: `shane530/cowork-analyst-starter`
+3. Paste this repository: `ai-analyst-lab/ai-analyst-plugin`
 4. Find **AI Analyst Plus** and click **Install**.
 
 New to Cowork? The walkthrough, from installing Claude Desktop to your first analysis, is in [SETUP-GUIDE.md](./SETUP-GUIDE.md).
@@ -21,8 +21,8 @@ New to Cowork? The walkthrough, from installing Claude Desktop to your first ana
 ## Install in Claude Code
 
 ```bash
-claude plugin marketplace add shane530/cowork-analyst-starter
-claude plugin install ai-analyst-plus@cowork-analyst-starter
+claude plugin marketplace add ai-analyst-lab/ai-analyst-plugin
+claude plugin install ai-analyst-plus@ai-analyst-plugin
 ```
 
 ## How to use it

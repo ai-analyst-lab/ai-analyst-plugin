@@ -11,7 +11,7 @@ This guide takes you from nothing to a finished analysis: a written brief and a 
 ## Step 2: Install the AI Analyst Plus plugin
 
 1. In Cowork, go to **Customize > Plugins**.
-2. Choose **Add marketplace** and paste this repository: `shane530/cowork-analyst-starter`
+2. Choose **Add marketplace** and paste this repository: `ai-analyst-lab/ai-analyst-plugin`
 3. Find **AI Analyst Plus** in the list and click **Install**.
 
 Two settings make the plugin reliable:
